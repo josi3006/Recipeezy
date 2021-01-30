@@ -22,7 +22,7 @@ function Navbar() {
                 
                 <Router>
                 <nav>
-                    <Link to="/"><i class="material-icons">home</i></Link>
+                    <Link to="/"><i class="material-icons-outlined">home</i></Link>
                     {/* <Link to="/dashboard">Dashboard</Link> */}
                 </nav>
 
