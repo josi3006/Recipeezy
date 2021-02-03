@@ -9,14 +9,10 @@ body {
     font-size: 62.5%;
   }
 
-
-
 .navdiv {
     display: flex;
     justify-content: space-around;
-    /* align-items: center; */
     width: 100vw;
-    /* min-height: 6vh; */
     margin: auto 0;
     background-color: #202020;
 }

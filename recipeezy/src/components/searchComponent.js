@@ -3,15 +3,45 @@
 import Navbar from './navComponent';
 
 
-function SearchPage() {
+const SearchPage = () => {
 
+  
+    const handleSearch = (e) => {
+        e.preventDefault();
+
+        console.log('You clicked!');
+    }
     
+
     return (
         <div>
 
-<Navbar />
+            <Navbar />
 
-            <h1>Insert Search Junk Here</h1>
+            <button onClick={handleSearch}>Click?</button>
+
+            {/* <form
+                className='mt-5 py-5 px-5'
+                autoComplete='off'
+                onSubmit={this.handleSearch}>
+
+
+                <div className='row'>
+                    <div className='col s12'>
+                        <div className='form-group'>
+                            <input
+                                className='form-control'
+                                placeholder='Email'
+                                name='email'
+                                type='email'
+                                onChange={this.handleChange}
+                                value={this.state.email}
+                            />
+                        </div>
+                    </div>
+                </div>
+
+            </form> */}
 
         </div>
     );

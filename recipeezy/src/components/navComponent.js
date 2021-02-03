@@ -4,24 +4,16 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 
-
-
 function Navbar() {
-
-
 
     return (
 
-        <div class="container navdiv">
+        <div className="container navdiv">
 
-               
-                    <Link to="/"><i class="material-icons-outlined">home</i></Link>
-                    <Link to="/ingredients"><i class="material-icons-outlined">local_grocery_store</i></Link>
-                    <Link to="/steps"><i class="material-icons-outlined">format_list_numbered</i></Link>
-             
-
-
-
+            <Link to="/"><i className="material-icons-outlined">home</i></Link>
+            <Link to="/ingredients"><i className="material-icons-outlined">local_grocery_store</i></Link>
+            <Link to="/steps"><i className="material-icons-outlined">format_list_numbered</i></Link>
+        
         </div>
 
 
