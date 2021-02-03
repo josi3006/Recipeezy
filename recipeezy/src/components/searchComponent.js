@@ -8,7 +8,7 @@ function SearchPage() {
     return (
         <div>
 
-            <Navbar />
+            {/* <Navbar /> */}
             <h1>Insert Search Junk Here</h1>
 
         </div>
