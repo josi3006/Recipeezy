@@ -1,13 +1,8 @@
 // import './App.css';
 import './components.css';
-import {
-    BrowserRouter as Router,
-    Route, Link
-} from 'react-router-dom';
-import SearchPage from './searchComponent.js';
-import HitlistPage from './hitlistComponent.js';
-import IngredientsPage from './ingredientsComponent.js';
-import StepsPage from './stepsComponent';
+import React from 'react';
+import { Link } from "react-router-dom";
+
 
 
 
@@ -17,28 +12,14 @@ function Navbar() {
 
     return (
 
-        <div class="container">
+        <div class="container navdiv">
 
-            <Router>
-                <nav>
-                    <Link to="/"><i class="material-icons">HOME</i></Link>
-                    <Link to="/ingredients">Ingredients</Link>
-                </nav>
+               
+                    <Link to="/"><i class="material-icons-outlined">home</i></Link>
+                    <Link to="/ingredients"><i class="material-icons-outlined">local_grocery_store</i></Link>
+                    <Link to="/steps"><i class="material-icons-outlined">format_list_numbered</i></Link>
+             
 
-
-                <Route
-                    path="/"
-                    component={SearchPage}
-                    exact
-                />
-
-
-                <Route
-                    path="/ingredients"
-                    component={IngredientsPage}
-                />
-
-            </Router>
 
 
         </div>

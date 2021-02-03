@@ -5,18 +5,23 @@
     padding: 0;
 }
 
+body {
+    font-size: 62.5%;
+  }
+
 
 
 .navdiv {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    /* align-items: center; */
     width: 100vw;
-    min-height: 6vh;
+    /* min-height: 6vh; */
     margin: auto 0;
     background-color: #202020;
 }
 
-.material-icons {
+.material-icons-outlined {
     color: #75ffff;
+    font-size: 3.6em;
 }
