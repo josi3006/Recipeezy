@@ -1,15 +1,20 @@
 // import logo from './logo.svg';
 // import './App.css';
 import Navbar from './navComponent';
+import React, { useEffect, useState } from "react";
+
 
 
 const SearchPage = () => {
 
+    const [count, setCount] = useState(0);
+
   
     const handleSearch = (e) => {
         e.preventDefault();
+        setCount(count + 1);
+        console.log(count + 'cliques');
 
-        console.log('You clicked!');
     }
     
 
