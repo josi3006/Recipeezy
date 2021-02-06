@@ -9,13 +9,18 @@ const SearchPage = () => {
 
     const [count, setCount] = useState(0);
     const [searchTerms, setSearchTerms] = useState("");
+    const [hitList, setHitList] = useState([""]);
 
 
-    const clickCount = (e) => {
+    const testHitList = (e) => {
         e.preventDefault();
-        setCount(count + 1);
-        console.log(count + ' cliques');
-    }
+        setHitList(['foo', 'bar', 'baz', 'qux']);
+
+        console.log('listy is: ' + hitList)
+    };
+
+
+
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -29,12 +34,11 @@ const SearchPage = () => {
 
             <Navbar />
 
-            <button onClick={clickCount}>Click?</button>
+            <button onClick={testHitList}>Click for hit list</button>
 
             <form
                 className="m-5"
                 onSubmit={handleSearch}>
-
                 <div className='row'>
                     <div className='col s12'>
                         <div className='form-group'>
@@ -42,40 +46,23 @@ const SearchPage = () => {
                                 className='form-control'
                                 placeholder='Search'
                                 onChange={(event) => setSearchTerms(event.currentTarget.value)}
-                                name='searchterms' 
+                                name='searchterms'
                                 id='searchtermsbox'
                                 value={searchTerms}
                             />
                         </div>
                     </div>
                 </div>
-
-<button type="submit">GO!</button>
-
+                <button type="submit">GO!</button>
             </form>
 
-            {/* <form
-                className='mt-5 py-5 px-5'
-                autoComplete='off'
-                onSubmit={this.handleSearch}>
+            <div className='row' id="hitListRow">
+                <div className='col' id="hitListCol">
 
+                    {/* Search hit list renders here */}
 
-                <div className='row'>
-                    <div className='col s12'>
-                        <div className='form-group'>
-                            <input
-                                className='form-control'
-                                placeholder='Email'
-                                name='email'
-                                type='email'
-                                onChange={this.handleChange}
-                                value={this.state.email}
-                            />
-                        </div>
-                    </div>
                 </div>
-
-            </form> */}
+            </div>
 
         </div>
     );
