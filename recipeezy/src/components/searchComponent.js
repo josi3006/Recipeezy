@@ -7,34 +7,27 @@ import React, { useEffect, useState } from "react";
 
 const SearchPage = () => {
 
-    const [count, setCount] = useState(0);
     const [searchTerms, setSearchTerms] = useState("");
     const [hitList, setHitList] = useState([""]);
 
 
-    const testHitList = (e) => {
+    const handleSearch = (e) => {
         e.preventDefault();
-        setHitList(['foo', 'bar', 'baz', 'qux']);
-
-        console.log('listy is: ' + hitList)
+       console.log('Here are the terms: ' + searchTerms);
     };
 
 
 
+    // useEffect(() => {
+    //     console.log('You want to search: ' + searchTerms)
+    // }, [searchTerms]);
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        setSearchTerms(searchTerms);
-        console.log('You want to search: ' + searchTerms);
 
-    }
 
     return (
         <div>
 
             <Navbar />
-
-            <button onClick={testHitList}>Click for hit list</button>
 
             <form
                 className="m-5"
