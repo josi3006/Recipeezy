@@ -3,6 +3,7 @@
 import Navbar from './navComponent';
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import StepsPage from './stepsComponent';
 
 
 
@@ -10,6 +11,12 @@ const SearchPage = () => {
 
     const [searchTerms, setSearchTerms] = useState("");
     const [hitList, setHitList] = useState([""]);
+    const [testProp, setTestProp] = useState("");
+
+
+    const sendIt = () => {
+        setTestProp('sup');
+    }
 
 
     const handleSearch = (e) => {
@@ -18,7 +25,7 @@ const SearchPage = () => {
     };
 
 
-    const options = {
+    const searchOptions = {
         method: 'GET',
         url: 'https://webknox-recipes.p.rapidapi.com/recipes/search',
         params: {
@@ -30,15 +37,19 @@ const SearchPage = () => {
         }
     };
 
-    const makeTheCall = () => {
+    const makeTheCall = (e) => {
+        e.preventDefault();
 
-        axios.request(options)
+        axios.request(searchOptions)
             .then((response) => {
-                console.log(response.data);
+                // console.log(response.data.results[0].title);
+                console.log('in axios ' + response.data.results[0].title);
+                setHitList(response.data);
             })
             .catch((error) => {
                 console.error(error);
             });
+
     }
 
 
@@ -56,12 +67,27 @@ const SearchPage = () => {
     //     console.log('You want to search: ' + searchTerms)
     // }, [searchTerms]);
 
+    // useEffect(() => {
+    //     console.log('in useEffect' + JSON.stringify(hitList.results[0]))
+    // },
+    //     [hitList]);
+
+    useEffect(() => {
+        console.log('console says ' + testProp);
+    }, [testProp]);
+
+
 
 
     return (
+
         <div>
 
             <Navbar />
+
+            <StepsPage message="I made it!" />
+
+            <button onClick={sendIt}>Send. It.</button>
 
             <button onClick={makeTheCall}>DO an AJAX call now</button>
 
@@ -88,6 +114,9 @@ const SearchPage = () => {
             <div className='row' id="hitListRow">
                 <div className='col' id="hitListCol">
 
+
+                    <ul>
+                    </ul>
                     {/* Search hit list renders here */}
 
                 </div>

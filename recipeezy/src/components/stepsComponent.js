@@ -3,12 +3,14 @@
 import Navbar from './navComponent';
 
 
-function StepsPage() {
+function StepsPage(props) {
   return (
     <div>
       <Navbar />
+
       
-      <h1>Steps go here!</h1>
+      
+      <h1>{ props.message }</h1>
     </div>
   );
 }
