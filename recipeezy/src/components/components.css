@@ -9,12 +9,21 @@ body {
     font-size: 62.5%;
   }
 
+  .bored {
+      border: 2px solid;
+  }
 .navdiv {
     display: flex;
     justify-content: space-around;
     width: 100vw;
     background-color: #202020;
 }
+
+li {
+    list-style-type: none;  /* removes bullets */
+}
+
+
 
 .material-icons-outlined {
     color: #75ffff;
