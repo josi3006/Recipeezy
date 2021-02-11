@@ -1,6 +1,6 @@
 
 /* This sets all element padding and margin to 0 */
-* {
+* html {
     margin: 0;
     padding: 0;
 }
@@ -13,7 +13,6 @@ body {
     display: flex;
     justify-content: space-around;
     width: 100vw;
-    margin: auto 0;
     background-color: #202020;
 }
 
@@ -21,3 +20,12 @@ body {
     color: #75ffff;
     font-size: 3.6em;
 }
+
+.narrow {
+    max-width: 50vw
+}
+
+.blue {
+    background-color: blue;
+}
+

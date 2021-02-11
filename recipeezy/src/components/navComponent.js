@@ -8,7 +8,7 @@ function Navbar() {
 
     return (
 
-        <div className="container navdiv">
+        <div className="container-fluid navdiv">
 
             <Link to="/"><i className="material-icons-outlined">home</i></Link>
             <Link to="/ingredients"><i className="material-icons-outlined">local_grocery_store</i></Link>

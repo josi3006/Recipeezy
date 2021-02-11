@@ -94,8 +94,8 @@ const SearchPage = () => {
             <form
                 className="m-5"
                 onSubmit={handleSearch}>
-                <div className='row'>
-                    <div className='col s12'>
+                <div className='row d-flex justify-content-center'>
+                    <div className='col s12 narrow'>
                         <div className='form-group'>
                             <input
                                 className='form-control'
