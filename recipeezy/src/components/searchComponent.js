@@ -85,7 +85,6 @@ const SearchPage = () => {
 
         <div>
 
-            <Navbar />
 
             <StepsPage message="I made it!" />
 
@@ -103,15 +102,12 @@ const SearchPage = () => {
 			{Object.keys(hitList).map((key) => {
 				const hitItem = hitList[key];
 
-
-
 				return (
 					<div key={hitItem.id}>
 						<div>
-							<div >
-								{hitItem.title}
-
-								
+							<div>
+								<h4>{hitItem.title}</h4><br />
+                                {hitItem.sourceUrl}	<br /><br />						
 
 							</div>
 						</div>
