@@ -44,7 +44,9 @@ const SearchPage = () => {
             .then((response) => {
                 // console.log(response.data.results[0].title);
                 console.log('in axios ' + response.data.results[0].title);
-                setHitList(response.data);
+                console.log('in axios just data' + response.data);
+                console.log('as JSON ' + JSON.stringify(response.data.results))
+                setHitList(response.data.results);
             })
             .catch((error) => {
                 console.error(error);
@@ -90,6 +92,37 @@ const SearchPage = () => {
             <button onClick={sendIt}>Send. It.</button>
 
             <button onClick={makeTheCall}>DO an AJAX call now</button>
+
+
+
+
+
+
+
+            
+			{Object.keys(hitList).map((key) => {
+				const hitItem = hitList[key];
+
+
+
+				return (
+					<div key={hitItem.id}>
+						<div>
+							<div >
+								{hitItem.title}
+
+								
+
+							</div>
+						</div>
+					</div>
+				);
+			})}
+
+
+
+
+
 
             <form
                 className="m-5"
