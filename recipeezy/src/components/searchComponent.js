@@ -12,6 +12,7 @@ const SearchPage = () => {
 
     const [searchTerms, setSearchTerms] = useState("");
     const [hitList, setHitList] = useState([""]);
+    const [clickedURL, setClickedURL] = useState("");
 
 
     const searchOptions = {
@@ -28,7 +29,6 @@ const SearchPage = () => {
 
     const makeTheCall = (e) => {
         e.preventDefault();
-        console.log('The password is... ' + process.env.REACT_APP_API_key);
         axios.request(searchOptions)
             .then((response) => {
 
@@ -38,6 +38,11 @@ const SearchPage = () => {
                 console.error(error);
             });
 
+    }
+
+    const whichURL = (e) => {
+        e.preventDefault();
+        console.log('You clicked ' + clickedURL);
     }
 
 
@@ -60,8 +65,10 @@ const SearchPage = () => {
 
                                 <div>
                                     <li>{hitItem.title}</li>
-                                    <li><small><a href={hitItem.sourceUrl}>{hitItem.sourceUrl}</a></small></li>
-
+                                    <li
+                                        onClick={() => setClickedURL(hitItem.sourceUrl)}>
+                                        <small>{hitItem.sourceUrl}</small>
+                                    </li>
                                 </div>
 
                             </div>
@@ -93,6 +100,7 @@ const SearchPage = () => {
 
             <button onClick={makeTheCall}>Search</button>
 
+            <button onClick={whichURL}>loggit</button>
 
             <div className='row' id="hitListRow">
                 <div className='col' id="hitListCol">
