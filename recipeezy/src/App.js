@@ -6,6 +6,8 @@ import {
 import SearchPage from './components/searchComponent.js';
 import IngredientsPage from './components/ingredientsComponent.js';
 import StepsPage from './components/stepsComponent';
+require('dotenv').config();
+
 
 
 

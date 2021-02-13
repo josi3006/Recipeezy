@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
 // import './App.css';
 import Navbar from './navComponent';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
-import StepsPage from './stepsComponent';
+require('dotenv').config();
+// import StepsPage from './stepsComponent';
 
 
 
@@ -20,14 +21,14 @@ const SearchPage = () => {
             query: searchTerms,
         },
         headers: {
-            'x-rapidapi-key': '95c88ae2bbmsh9f3c0bf207b69b3p176cf9jsne229f6e467a1',
+            'x-rapidapi-key': process.env.REACT_APP_API_key,
             'x-rapidapi-host': 'webknox-recipes.p.rapidapi.com'
         }
     };
 
     const makeTheCall = (e) => {
         e.preventDefault();
-
+        console.log('The password is... ' + process.env.REACT_APP_API_key);
         axios.request(searchOptions)
             .then((response) => {
 
@@ -60,7 +61,7 @@ const SearchPage = () => {
                                 <div>
                                     <li>{hitItem.title}</li>
                                     <li><small><a href={hitItem.sourceUrl}>{hitItem.sourceUrl}</a></small></li>
-                                    
+
                                 </div>
 
                             </div>

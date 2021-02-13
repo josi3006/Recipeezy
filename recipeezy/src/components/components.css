@@ -1,17 +1,15 @@
 
-/* This sets all element padding and margin to 0 */
+
 * html {
     margin: 0;
     padding: 0;
-}
+}  /* sets all padding and margins to 0 */
 
 body {
     font-size: 62.5%;
   }
 
-  .bored {
-      border: 2px solid;
-  }
+
 .navdiv {
     display: flex;
     justify-content: space-around;
