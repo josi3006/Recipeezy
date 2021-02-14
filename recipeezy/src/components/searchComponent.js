@@ -12,9 +12,9 @@ const SearchPage = () => {
 
     const [searchTerms, setSearchTerms] = useState("");
     const [hitList, setHitList] = useState([""]);
-    const [clickedURL, setClickedURL] = useState("");
+    const [clickedID, setClickedID] = useState("");
 
-
+    // Options to SEARCH the API for recipes
     const searchOptions = {
         method: 'GET',
         url: 'https://webknox-recipes.p.rapidapi.com/recipes/search',
@@ -27,6 +27,33 @@ const SearchPage = () => {
         }
     };
 
+
+    // Options to Get recipe data after choosing a recipe
+    const recipeData = {
+        method: 'GET',
+        url: 'https://webknox-recipes.p.rapidapi.com/recipes/' + clickedID + '/information',
+        headers: {
+            'x-rapidapi-key': process.env.REACT_APP_API_key,
+            'x-rapidapi-host': 'webknox-recipes.p.rapidapi.com'
+        }
+    };
+
+
+
+    const getIngredients = (e) => {
+        e.preventDefault();
+        console.log('Get URL string is ' + recipeData.url);
+        axios.request(recipeData)
+            .then((response) => {
+                // setIngredientList(response.data.results.what);
+                console.log('Axios results ' + response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    // API call to search all recipes
     const makeTheCall = (e) => {
         e.preventDefault();
         axios.request(searchOptions)
@@ -38,11 +65,6 @@ const SearchPage = () => {
                 console.error(error);
             });
 
-    }
-
-    const whichURL = (e) => {
-        e.preventDefault();
-        console.log('You clicked ' + clickedURL);
     }
 
 
@@ -66,7 +88,7 @@ const SearchPage = () => {
                                 <div>
                                     <li>{hitItem.title}</li>
                                     <li
-                                        onClick={() => setClickedURL(hitItem.sourceUrl)}>
+                                        onClick={() => setClickedID(hitItem.id)}>
                                         <small>{hitItem.sourceUrl}</small>
                                     </li>
                                 </div>
@@ -100,7 +122,8 @@ const SearchPage = () => {
 
             <button onClick={makeTheCall}>Search</button>
 
-            <button onClick={whichURL}>loggit</button>
+
+            <button onClick={getIngredients}>Show Ingredients</button>
 
             <div className='row' id="hitListRow">
                 <div className='col' id="hitListCol">
@@ -113,7 +136,7 @@ const SearchPage = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 }
 
