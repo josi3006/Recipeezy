@@ -49,6 +49,7 @@ const SearchPage = () => {
                 console.log(response.data);
                 setRecipeIngredients(response.data.extendedIngredients);
                 setRecipeSteps(response.data.analyzedInstructions);
+
                 // change that to response.data.extendedIngredients?
                 console.log('Axios results ' + response.data.results);
             })
