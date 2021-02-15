@@ -13,6 +13,8 @@ const SearchPage = () => {
     const [searchTerms, setSearchTerms] = useState("");
     const [hitList, setHitList] = useState([""]);
     const [clickedID, setClickedID] = useState("");
+    const [recipeIngredients, setRecipeIngredients] = useState([""]);
+    const [recipeSteps, setRecipeSteps] = useState([""]);
 
     // Options to SEARCH the API for recipes
     const searchOptions = {
@@ -29,7 +31,7 @@ const SearchPage = () => {
 
 
     // Options to Get recipe data after choosing a recipe
-    const recipeData = {
+    const recipeDataCall = {
         method: 'GET',
         url: 'https://webknox-recipes.p.rapidapi.com/recipes/' + clickedID + '/information',
         headers: {
@@ -39,14 +41,16 @@ const SearchPage = () => {
     };
 
 
-
-    const getIngredients = (e) => {
+// API call to get data for our chosen recipe
+    const getRecipeData = (e) => {
         e.preventDefault();
-        console.log('Get URL string is ' + recipeData.url);
-        axios.request(recipeData)
+        axios.request(recipeDataCall)
             .then((response) => {
-                // setIngredientList(response.data.results.what);
-                console.log('Axios results ' + response);
+                console.log(response.data);
+                setRecipeIngredients(response.data.extendedIngredients);
+                setRecipeSteps(response.data.analyzedInstructions);
+                // change that to response.data.extendedIngredients?
+                console.log('Axios results ' + response.data.results);
             })
             .catch((error) => {
                 console.log(error);
@@ -80,11 +84,8 @@ const SearchPage = () => {
                     const hitItem = hitList[key];
 
                     return (
-
                         <div key={hitItem.id}>
-
                             <div>
-
                                 <div>
                                     <li>{hitItem.title}</li>
                                     <li
@@ -92,11 +93,29 @@ const SearchPage = () => {
                                         <small>{hitItem.sourceUrl}</small>
                                     </li>
                                 </div>
-
                             </div>
-
                         </div>
+                    );
+                })}
 
+            </ul>
+
+
+
+            <ul>
+
+                {Object.keys(recipeIngredients).map((key) => {
+                    const recipeIngredient = recipeIngredients[key];
+
+                    return (
+                        <div key={recipeIngredient.id}>
+                            <div>
+                                <div>
+                                    <li>{recipeIngredient.originalString}</li>
+                                   
+                                </div>
+                            </div>
+                        </div>
                     );
                 })}
 
@@ -120,10 +139,10 @@ const SearchPage = () => {
                 {/* <button type="submit">GO!</button> */}
             </form>
 
-            <button onClick={makeTheCall}>Search</button>
+            <button onClick={makeTheCall}>Search All Recipes</button>
 
 
-            <button onClick={getIngredients}>Show Ingredients</button>
+            <button onClick={getRecipeData}>Show Our Recipe's Data</button>
 
             <div className='row' id="hitListRow">
                 <div className='col' id="hitListCol">
