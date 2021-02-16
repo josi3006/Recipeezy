@@ -41,17 +41,17 @@ const SearchPage = () => {
     };
 
 
-// API call to get data for our chosen recipe
+    // API call to get data for our chosen recipe
     const getRecipeData = (e) => {
         e.preventDefault();
         axios.request(recipeDataCall)
             .then((response) => {
-                console.log(response.data);
+                console.log('All data********* ');
+                console.log(JSON.stringify(response.data));
+                console.log('Analyzed Instructions***********');
+                console.dir(response.data.analyzedInstructions[0].steps);
                 setRecipeIngredients(response.data.extendedIngredients);
-                setRecipeSteps(response.data.analyzedInstructions);
-
-                // change that to response.data.extendedIngredients?
-                console.log('Axios results ' + response.data.results);
+                setRecipeSteps(response.data.analyzedInstructions);              
             })
             .catch((error) => {
                 console.log(error);
@@ -63,7 +63,6 @@ const SearchPage = () => {
         e.preventDefault();
         axios.request(searchOptions)
             .then((response) => {
-
                 setHitList(response.data.results);
             })
             .catch((error) => {
@@ -113,7 +112,7 @@ const SearchPage = () => {
                             <div>
                                 <div>
                                     <li>{recipeIngredient.originalString}</li>
-                                   
+
                                 </div>
                             </div>
                         </div>
