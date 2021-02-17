@@ -3,16 +3,32 @@
 import Navbar from './navComponent';
 
 
-function StepsPage(props) {
+const StepsPage = ({ recipeSteps }) => {
+
   return (
     <div>
       <Navbar />
+      <ul>
+        {Object.keys(recipeSteps).map((key) => {
+          const recipeStep = recipeSteps[key];
+          return (
+            <div key={recipeStep.number}>
+              <div>
+                <div>
 
-      
-      
-      <h1>{ props.message }</h1>
+                  {/* Added ".step" below - see above where removed */}
+
+                  <li>{recipeStep.step}</li>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </ul>
     </div>
   );
-}
+};
+
+
 
 export default StepsPage;
