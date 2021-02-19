@@ -36,3 +36,7 @@ li {
     background-color: blue;
 }
 
+
+.IngredientListDiv {
+    display: hidden;
+}

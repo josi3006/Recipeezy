@@ -5,9 +5,9 @@ import Navbar from './navComponent';
 function IngredientsPage(props) {
   return (
 
-    <div>
+    
+    <div className="IngredientListDiv">
 
-<p>Here's the inhgredient coponent!</p>
       <ul>
         {Object.keys(props.recipeIngredients).map((key) => {
           const recipeIngredient = props.recipeIngredients[key];

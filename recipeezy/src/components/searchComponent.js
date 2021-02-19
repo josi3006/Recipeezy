@@ -17,8 +17,13 @@ const SearchPage = () => {
     const [clickedID, setClickedID] = useState("");
     const [recipeIngredients, setRecipeIngredients] = useState([""]);
     const [recipeSteps, setRecipeSteps] = useState([""]);
+    const [showHitList, setShowHitList] = useState(false);
+    const [showRecipeSteps, setShowRecipeSteps] = useState(false);
+    const [showIngredientList, setShowIngredientList] = useState(false);
 
-
+    const clickToShow = () => {
+        setShowIngredientList(true)
+    };
 
     // Options to SEARCH the API for recipes
     const searchOptions = {
@@ -104,7 +109,9 @@ const SearchPage = () => {
 
 
             {/* This maps recipe INGREDIENTS list to page */}
-            <IngredientsPage recipeIngredients={recipeIngredients} />
+            { showIngredientList ? <IngredientsPage recipeIngredients={recipeIngredients} /> : null}
+
+            <button onClick={clickToShow}>Show Ingredients</button>
 
 
 
