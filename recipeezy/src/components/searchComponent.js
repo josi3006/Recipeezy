@@ -4,6 +4,7 @@ import Navbar from './navComponent';
 import React, { useState } from "react";
 import axios from 'axios';
 import StepsPage from './stepsComponent';
+import IngredientsPage from './ingredientsComponent';
 
 require('dotenv').config();
 
@@ -14,26 +15,7 @@ const SearchPage = () => {
     const [searchTerms, setSearchTerms] = useState("");
     const [hitList, setHitList] = useState([""]);
     const [clickedID, setClickedID] = useState("");
-    // const [recipeIngredients, setRecipeIngredients] = useState([""]);
-    const [recipeIngredients, setRecipeIngredients] = useState([
-        {
-            id: 1,
-            originalString: "foo"
-        },
-        {
-            id: 2,
-            originalString: "bar"
-        },
-        {
-            id: 3,
-            originalString: "baz"
-        },
-        {
-            id: 4,
-            originalString: "qux"
-        }]);
-
-
+    const [recipeIngredients, setRecipeIngredients] = useState([""]);
     const [recipeSteps, setRecipeSteps] = useState([""]);
 
 
@@ -68,12 +50,7 @@ const SearchPage = () => {
         e.preventDefault();
         axios.request(recipeDataCall)
             .then((response) => {
-                console.log('Analyzed Instructions***********');
-                console.dir(response.data.analyzedInstructions[0].steps);
                 setRecipeIngredients(response.data.extendedIngredients);
-
-                // removed ".steps" from below, try that
-
                 setRecipeSteps(response.data.analyzedInstructions[0].steps);
             })
             .catch((error) => {
@@ -127,22 +104,7 @@ const SearchPage = () => {
 
 
             {/* This maps recipe INGREDIENTS list to page */}
-
-            <ul>
-                {Object.keys(recipeIngredients).map((key) => {
-                    const recipeIngredient = recipeIngredients[key];
-                    return (
-                        <div key={recipeIngredient.id}>
-                            <div>
-                                <div>
-                                    <li>{recipeIngredient.originalString}</li>
-
-                                </div>
-                            </div>
-                        </div>
-                    );
-                })}
-            </ul>
+            <IngredientsPage recipeIngredients={recipeIngredients} />
 
 
 
@@ -180,7 +142,6 @@ const SearchPage = () => {
                         </div>
                     </div>
                 </div>
-                {/* <button type="submit">GO!</button> */}
             </form>
 
             <button onClick={makeTheCall}>Search All Recipes</button>

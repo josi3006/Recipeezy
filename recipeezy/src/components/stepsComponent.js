@@ -7,24 +7,33 @@ const StepsPage = ({ recipeSteps }) => {
 
   return (
     <div>
+
+
       <Navbar />
-      <ul>
-        {Object.keys(recipeSteps).map((key) => {
-          const recipeStep = recipeSteps[key];
-          return (
-            <div key={recipeStep.number}>
-              <div>
-                <div>
+     
 
-                  {/* Added ".step" below - see above where removed */}
+  {/* This maps recipe STEPS list to page */}
+  <ul>
+                {Object.keys(recipeSteps).map((key) => {
+                    const recipeStep = recipeSteps[key];
+                    return (
+                        <div key={recipeStep.number}>
+                            <div>
+                                <div>
 
-                  <li>{recipeStep.step}</li>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </ul>
+
+                                    <li>{recipeStep.step}</li>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
+            </ul>
+
+
+
+
+
     </div>
   );
 };

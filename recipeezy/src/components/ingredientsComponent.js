@@ -2,16 +2,30 @@
 // import './App.css';
 import Navbar from './navComponent';
 
-function IngredientsPage() {
-    return (
+function IngredientsPage(props) {
+  return (
 
-      <div>
+    <div>
 
-        <Navbar />
-        
-        <h1>Here's the list of ingredients</h1>
-      </div>
-    );
-  }
-  
-  export default IngredientsPage;
+<p>Here's the inhgredient coponent!</p>
+      <ul>
+        {Object.keys(props.recipeIngredients).map((key) => {
+          const recipeIngredient = props.recipeIngredients[key];
+          return (
+            <div key={recipeIngredient.id}>
+              <div>
+                <div>
+                  <li>{recipeIngredient.originalString}</li>
+
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </ul>
+
+    </div>
+  );
+}
+
+export default IngredientsPage;
