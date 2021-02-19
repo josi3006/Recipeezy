@@ -17,12 +17,20 @@ const SearchPage = () => {
     const [clickedID, setClickedID] = useState("");
     const [recipeIngredients, setRecipeIngredients] = useState([""]);
     const [recipeSteps, setRecipeSteps] = useState([""]);
-    const [showHitList, setShowHitList] = useState(false);
+    const [showHitList, setShowHitList] = useState(true);
     const [showRecipeSteps, setShowRecipeSteps] = useState(false);
     const [showIngredientList, setShowIngredientList] = useState(false);
 
-    const clickToShow = () => {
+    const clickToShowIngredients = () => {
         setShowIngredientList(true)
+    };
+
+    const clickToShowSteps = () => {
+        setShowRecipeSteps(true)
+    };
+
+    const clickToHideHitList = () => {
+        setShowHitList(false)
     };
 
     // Options to SEARCH the API for recipes
@@ -85,24 +93,26 @@ const SearchPage = () => {
 
 
             {/* This maps SEARCH HIT list to page */}
-            <ul>
-                {Object.keys(hitList).map((key) => {
-                    const hitItem = hitList[key];
-                    return (
-                        <div key={hitItem.id}>
-                            <div>
+            { showHitList ?
+                <ul>
+                    {Object.keys(hitList).map((key) => {
+                        const hitItem = hitList[key];
+                        return (
+                            <div key={hitItem.id}>
                                 <div>
-                                    <li>{hitItem.title}</li>
-                                    <li
-                                        onClick={() => setClickedID(hitItem.id)}>
-                                        <small>{hitItem.sourceUrl}</small>
-                                    </li>
+                                    {/* make a function that fires on click here that hides hitlist, shows steps, shows ingredients and setsClickedID */}
+                                    <div onClick={clickToHideHitList}>
+                                        <li>{hitItem.title}</li>
+                                        <li
+                                            onClick={() => setClickedID(hitItem.id)}>
+                                            <small>{hitItem.sourceUrl}</small>
+                                        </li>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    );
-                })}
-            </ul>
+                        );
+                    })}
+                </ul> : null}
 
 
 
@@ -110,30 +120,16 @@ const SearchPage = () => {
 
             {/* This maps recipe INGREDIENTS list to page */}
             { showIngredientList ? <IngredientsPage recipeIngredients={recipeIngredients} /> : null}
-
-            <button onClick={clickToShow}>Show Ingredients</button>
+            <button onClick={clickToShowIngredients}>Show Ingredients</button>
 
 
 
             {/* This maps recipe STEPS list to page */}
-            <ul>
-                {Object.keys(recipeSteps).map((key) => {
-                    const recipeStep = recipeSteps[key];
-                    return (
-                        <div key={recipeStep.number}>
-                            <div>
-                                <div>
+            { showRecipeSteps ? <StepsPage recipeSteps={recipeSteps} /> : null}
+            <button onClick={clickToShowSteps}>Show me the steps!</button>
 
 
-                                    <li>{recipeStep.step}</li>
-                                </div>
-                            </div>
-                        </div>
-                    );
-                })}
-            </ul>
-
-
+            {/* This is the search form */}
             <form className="m-5">
                 <div className='row d-flex justify-content-center'>
                     <div className='col s12 narrow'>
@@ -153,19 +149,8 @@ const SearchPage = () => {
 
             <button onClick={makeTheCall}>Search All Recipes</button>
 
-
             <button onClick={getRecipeData}>Show Our Recipe's Data</button>
 
-            <div className='row' id="hitListRow">
-                <div className='col' id="hitListCol">
-
-
-                    <ul>
-                    </ul>
-                    {/* Search hit list renders here */}
-
-                </div>
-            </div>
 
         </div >
     );

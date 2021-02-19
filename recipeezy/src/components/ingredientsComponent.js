@@ -5,8 +5,7 @@ import Navbar from './navComponent';
 function IngredientsPage(props) {
   return (
 
-    
-    <div className="IngredientListDiv">
+    <div>
 
       <ul>
         {Object.keys(props.recipeIngredients).map((key) => {

@@ -3,25 +3,22 @@
 import Navbar from './navComponent';
 
 
-const StepsPage = ({ recipeSteps }) => {
+const StepsPage = (props) => {
 
-  return (
-    <div>
+    return (
+        <div>
 
 
-      <Navbar />
-     
 
-  {/* This maps recipe STEPS list to page */}
-  <ul>
-                {Object.keys(recipeSteps).map((key) => {
-                    const recipeStep = recipeSteps[key];
+            {/* This maps recipe STEPS list to page */}
+
+            <ul>
+                {Object.keys(props.recipeSteps).map((key) => {
+                    const recipeStep = props.recipeSteps[key];
                     return (
                         <div key={recipeStep.number}>
                             <div>
                                 <div>
-
-
                                     <li>{recipeStep.step}</li>
                                 </div>
                             </div>
@@ -30,12 +27,8 @@ const StepsPage = ({ recipeSteps }) => {
                 })}
             </ul>
 
-
-
-
-
-    </div>
-  );
+        </div>
+    );
 };
 
 
