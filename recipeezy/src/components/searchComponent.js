@@ -1,5 +1,3 @@
-// import logo from './logo.svg';
-// import './App.css';
 import Navbar from './navComponent';
 import React, { useState } from "react";
 import axios from 'axios';
@@ -17,21 +15,43 @@ const SearchPage = () => {
     const [clickedID, setClickedID] = useState("");
     const [recipeIngredients, setRecipeIngredients] = useState([""]);
     const [recipeSteps, setRecipeSteps] = useState([""]);
-    const [showHitList, setShowHitList] = useState(true);
+    const [showSearchBar, setShowSearchBar] = useState(true);
+    const [showHitList, setShowHitList] = useState(false);
     const [showRecipeSteps, setShowRecipeSteps] = useState(false);
     const [showIngredientList, setShowIngredientList] = useState(false);
 
-    const clickToShowIngredients = () => {
-        setShowIngredientList(true)
+
+
+    // Navigation functions triggered by button clicks
+
+    const searchButton = () => {
+        makeTheCall();
+        setShowSearchBar(false);
+        setShowHitList(true);
     };
 
-    const clickToShowSteps = () => {
-        setShowRecipeSteps(true)
+    const hitItemClicked = () => {
+        // setClickedID(event.target.value);
+        setShowHitList(false);
+        setShowIngredientList(true);
+        setShowRecipeSteps(true);
     };
 
-    const clickToHideHitList = () => {
-        setShowHitList(false)
+    const reShowHitList = () => {
+        setShowIngredientList(false);
+        setShowRecipeSteps(false);
+        setShowHitList(true);
     };
+
+    const toggleStepsandIngredients = () => {
+
+    };
+
+    const resetEverything = () => {
+        window.location.reload();
+    };
+
+
 
     // Options to SEARCH the API for recipes
     const searchOptions = {
@@ -59,8 +79,7 @@ const SearchPage = () => {
 
 
     // API call to get data for our chosen recipe
-    const getRecipeData = (e) => {
-        e.preventDefault();
+    const getRecipeData = () => {
         axios.request(recipeDataCall)
             .then((response) => {
                 setRecipeIngredients(response.data.extendedIngredients);
@@ -72,8 +91,7 @@ const SearchPage = () => {
     }
 
     // API call to search all recipes
-    const makeTheCall = (e) => {
-        e.preventDefault();
+    const makeTheCall = () => {
         axios.request(searchOptions)
             .then((response) => {
                 setHitList(response.data.results);
@@ -91,6 +109,8 @@ const SearchPage = () => {
 
             <Navbar />
 
+            <button onClick={searchButton}>Search</button>
+            <button onClick={hitItemClicked}>show item</button>
 
             {/* This maps SEARCH HIT list to page */}
             { showHitList ?
@@ -101,12 +121,17 @@ const SearchPage = () => {
                             <div key={hitItem.id}>
                                 <div>
                                     {/* make a function that fires on click here that hides hitlist, shows steps, shows ingredients and setsClickedID */}
-                                    <div onClick={clickToHideHitList}>
+                                    <div>
                                         <li>{hitItem.title}</li>
                                         <li
                                             onClick={() => setClickedID(hitItem.id)}>
                                             <small>{hitItem.sourceUrl}</small>
                                         </li>
+
+
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -120,36 +145,31 @@ const SearchPage = () => {
 
             {/* This maps recipe INGREDIENTS list to page */}
             { showIngredientList ? <IngredientsPage recipeIngredients={recipeIngredients} /> : null}
-            <button onClick={clickToShowIngredients}>Show Ingredients</button>
-
 
 
             {/* This maps recipe STEPS list to page */}
             { showRecipeSteps ? <StepsPage recipeSteps={recipeSteps} /> : null}
-            <button onClick={clickToShowSteps}>Show me the steps!</button>
 
 
             {/* This is the search form */}
-            <form className="m-5">
-                <div className='row d-flex justify-content-center'>
-                    <div className='col s12 narrow'>
-                        <div className='form-group'>
-                            <input
-                                className='form-control'
-                                placeholder='Search'
-                                onChange={(event) => setSearchTerms(event.currentTarget.value)}
-                                name='searchterms'
-                                id='searchtermsbox'
-                                value={searchTerms}
-                            />
+            { showSearchBar ?
+                <form className="m-5">
+                    <div className='row d-flex justify-content-center'>
+                        <div className='col s12 narrow'>
+                            <div className='form-group'>
+                                <input
+                                    className='form-control'
+                                    placeholder='Search'
+                                    onChange={(event) => setSearchTerms(event.currentTarget.value)}
+                                    name='searchterms'
+                                    id='searchtermsbox'
+                                    value={searchTerms}
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form> : null}
 
-            <button onClick={makeTheCall}>Search All Recipes</button>
-
-            <button onClick={getRecipeData}>Show Our Recipe's Data</button>
 
 
         </div >
