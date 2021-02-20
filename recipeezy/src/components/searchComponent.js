@@ -1,5 +1,5 @@
 import Navbar from './navComponent';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import StepsPage from './stepsComponent';
 import IngredientsPage from './ingredientsComponent';
@@ -31,11 +31,15 @@ const SearchPage = () => {
     };
 
     const hitItemClicked = () => {
-        // setClickedID(event.target.value);
+        getRecipeData();
         setShowHitList(false);
         setShowIngredientList(true);
         setShowRecipeSteps(true);
     };
+
+    useEffect(() => {
+        hitItemClicked();
+    }, [clickedID]);
 
     const reShowHitList = () => {
         setShowIngredientList(false);
@@ -110,7 +114,6 @@ const SearchPage = () => {
             <Navbar />
 
             <button onClick={searchButton}>Search</button>
-            <button onClick={hitItemClicked}>show item</button>
 
             {/* This maps SEARCH HIT list to page */}
             { showHitList ?
@@ -128,9 +131,7 @@ const SearchPage = () => {
                                             <small>{hitItem.sourceUrl}</small>
                                         </li>
 
-
-
-
+                                    
 
                                     </div>
                                 </div>
