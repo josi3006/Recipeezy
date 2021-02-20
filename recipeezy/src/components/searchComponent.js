@@ -41,17 +41,27 @@ const SearchPage = () => {
         hitItemClicked();
     }, [clickedID]);
 
-    const reShowHitList = () => {
+    const reShowHitListButton = () => {
         setShowIngredientList(false);
         setShowRecipeSteps(false);
         setShowHitList(true);
     };
 
-    const toggleStepsandIngredients = () => {
-
+    const showIngredientsButton = () => {
+        setShowHitList(false);
+        setShowRecipeSteps(false);
+        setShowSearchBar(false);
+        setShowIngredientList(true);
     };
 
-    const resetEverything = () => {
+    const showRecipeStepsButton = () => {
+        setShowHitList(false);
+        setShowIngredientList(false);
+        setShowSearchBar(false);
+        setShowRecipeSteps(true);
+    };
+
+    const resetEverythingButton = () => {
         window.location.reload();
     };
 
@@ -94,6 +104,7 @@ const SearchPage = () => {
             });
     }
 
+
     // API call to search all recipes
     const makeTheCall = () => {
         axios.request(searchOptions)
@@ -111,9 +122,11 @@ const SearchPage = () => {
 
         <div>
 
-            <Navbar />
-
-            <button onClick={searchButton}>Search</button>
+            <Navbar 
+            reShowHitListButton={reShowHitListButton}
+            showIngredientsButton={showIngredientsButton}
+            showRecipeStepsButton={showRecipeStepsButton} 
+            resetEverythingButton={resetEverythingButton}/>
 
             {/* This maps SEARCH HIT list to page */}
             { showHitList ?
@@ -131,7 +144,7 @@ const SearchPage = () => {
                                             <small>{hitItem.sourceUrl}</small>
                                         </li>
 
-                                    
+
 
                                     </div>
                                 </div>
@@ -139,9 +152,6 @@ const SearchPage = () => {
                         );
                     })}
                 </ul> : null}
-
-
-
 
 
             {/* This maps recipe INGREDIENTS list to page */}
@@ -169,6 +179,9 @@ const SearchPage = () => {
                             </div>
                         </div>
                     </div>
+
+                    <button onClick={searchButton}>Search</button>
+
                 </form> : null}
 
 

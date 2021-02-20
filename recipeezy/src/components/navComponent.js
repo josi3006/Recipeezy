@@ -1,19 +1,18 @@
-// import './App.css';
 import './components.css';
 import React from 'react';
-import { Link } from "react-router-dom";
 
 
-function Navbar() {
+function Navbar(props) {
 
     return (
 
         <div className="container-fluid navdiv">
 
-            <Link to="/"><i className="material-icons-outlined">home</i></Link>
-            <Link to="/ingredients"><i className="material-icons-outlined">local_grocery_store</i></Link>
-            <Link to="/steps"><i className="material-icons-outlined">format_list_numbered</i></Link>
-        
+            <i className="material-icons-outlined" onClick={props.resetEverythingButton}>home</i>
+            <i className="material-icons-outlined" onClick={props.reShowHitListButton}>youtube_searched_for</i>
+
+            <i className="material-icons-outlined" onClick={props.showIngredientsButton}>local_grocery_store</i>
+            <i className="material-icons-outlined" onClick={props.showRecipeStepsButton}>format_list_numbered</i>
         </div>
 
 
