@@ -1,6 +1,5 @@
 // import logo from './logo.svg';
 // import './App.css';
-import Navbar from './navComponent';
 
 function IngredientsPage(props) {
   return (

@@ -19,6 +19,9 @@ const SearchPage = () => {
     const [showHitList, setShowHitList] = useState(false);
     const [showRecipeSteps, setShowRecipeSteps] = useState(false);
     const [showIngredientList, setShowIngredientList] = useState(false);
+    const [showHitListIcon, setShowHitListIcon] = useState(false);
+    const [showIngredientListIcon, setShowIngredientListIcon] = useState(false);
+    const [showRecipeStepsIcon, setShowRecipeStepsIcon] = useState(false);
 
 
 
@@ -28,14 +31,19 @@ const SearchPage = () => {
         makeTheCall();
         setShowSearchBar(false);
         setShowHitList(true);
+        setShowHitListIcon(true);
     };
 
     const hitItemClicked = () => {
         getRecipeData();
         setShowHitList(false);
         setShowIngredientList(true);
+        // setShowIngredientListIcon(true);
         setShowRecipeSteps(true);
+        // setShowRecipeStepsIcon(true);
     };
+
+
 
     useEffect(() => {
         hitItemClicked();
@@ -98,6 +106,8 @@ const SearchPage = () => {
             .then((response) => {
                 setRecipeIngredients(response.data.extendedIngredients);
                 setRecipeSteps(response.data.analyzedInstructions[0].steps);
+                setShowIngredientListIcon(true);
+                setShowRecipeStepsIcon(true);
             })
             .catch((error) => {
                 console.log(error);
@@ -110,6 +120,7 @@ const SearchPage = () => {
         axios.request(searchOptions)
             .then((response) => {
                 setHitList(response.data.results);
+                console.log(response.data.results)
             })
             .catch((error) => {
                 console.error(error);
@@ -122,11 +133,19 @@ const SearchPage = () => {
 
         <div>
 
-            <Navbar 
-            reShowHitListButton={reShowHitListButton}
-            showIngredientsButton={showIngredientsButton}
-            showRecipeStepsButton={showRecipeStepsButton} 
-            resetEverythingButton={resetEverythingButton}/>
+
+
+            <Navbar
+                showHitListIcon={showHitListIcon}
+                showIngredientListIcon={showIngredientListIcon}
+                showRecipeStepsIcon={showRecipeStepsIcon}
+                reShowHitListButton={reShowHitListButton}
+                showIngredientsButton={showIngredientsButton}
+                showRecipeStepsButton={showRecipeStepsButton}
+                resetEverythingButton={resetEverythingButton} />
+
+
+
 
             {/* This maps SEARCH HIT list to page */}
             { showHitList ?
@@ -134,20 +153,20 @@ const SearchPage = () => {
                     {Object.keys(hitList).map((key) => {
                         const hitItem = hitList[key];
                         return (
-                            <div key={hitItem.id}>
-                                <div>
-                                    {/* make a function that fires on click here that hides hitlist, shows steps, shows ingredients and setsClickedID */}
-                                    <div>
-                                        <li>{hitItem.title}</li>
-                                        <li
-                                            onClick={() => setClickedID(hitItem.id)}>
-                                            <small>{hitItem.sourceUrl}</small>
-                                        </li>
+                            <div>
+                                {/* <li key={hitItem.id}>{hitItem.title}</li>
+                                <li key={hitItem.id}
+                                    onClick={() => setClickedID(hitItem.id)}>
+                                    <small>{hitItem.sourceUrl}</small>
+                                </li> */}
+
+                                <li key={hitItem.id} onClick={() => setClickedID(hitItem.id)}>
+                                    {hitItem.title}<br />
+                                    <small>{hitItem.sourceUrl}</small>
+                                </li>
 
 
 
-                                    </div>
-                                </div>
                             </div>
                         );
                     })}
@@ -155,15 +174,15 @@ const SearchPage = () => {
 
 
             {/* This maps recipe INGREDIENTS list to page */}
-            { showIngredientList ? <IngredientsPage recipeIngredients={recipeIngredients} /> : null}
+            {showIngredientList ? <IngredientsPage recipeIngredients={recipeIngredients} /> : null}
 
 
             {/* This maps recipe STEPS list to page */}
-            { showRecipeSteps ? <StepsPage recipeSteps={recipeSteps} /> : null}
+            {showRecipeSteps ? <StepsPage recipeSteps={recipeSteps} /> : null}
 
 
             {/* This is the search form */}
-            { showSearchBar ?
+            {showSearchBar ?
                 <form className="m-5">
                     <div className='row d-flex justify-content-center'>
                         <div className='col s12 narrow'>
