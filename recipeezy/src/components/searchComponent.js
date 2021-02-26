@@ -36,9 +36,7 @@ const SearchPage = () => {
 
     const hitItemClicked = () => {
         getRecipeData();
-        setShowHitList(false);
-        setShowIngredientList(true);
-        setShowRecipeSteps(true);
+
     };
 
 
@@ -106,9 +104,9 @@ const SearchPage = () => {
                 setRecipeSteps(response.data.analyzedInstructions[0].steps);
                 setShowIngredientListIcon(true);
                 setShowRecipeStepsIcon(true);
-                console.log('from getRecipeData function ***************');
-                console.dir(response.data.extendedIngredients);
-
+                setShowHitList(false);
+                setShowIngredientList(true);
+                setShowRecipeSteps(true);
             })
             .catch((error) => {
                 console.log(error);
@@ -132,7 +130,8 @@ const SearchPage = () => {
     return (
 
         <div className="mainDiv">
-           
+
+            {console.log('ingredientlist? ' + showIngredientList)}
 
             <Navbar
                 showHitListIcon={showHitListIcon}
