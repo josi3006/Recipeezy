@@ -38,9 +38,7 @@ const SearchPage = () => {
         getRecipeData();
         setShowHitList(false);
         setShowIngredientList(true);
-        // setShowIngredientListIcon(true);
         setShowRecipeSteps(true);
-        // setShowRecipeStepsIcon(true);
     };
 
 
@@ -108,6 +106,9 @@ const SearchPage = () => {
                 setRecipeSteps(response.data.analyzedInstructions[0].steps);
                 setShowIngredientListIcon(true);
                 setShowRecipeStepsIcon(true);
+                console.log('from getRecipeData function ***************');
+                console.dir(response.data.extendedIngredients);
+              
             })
             .catch((error) => {
                 console.log(error);
@@ -120,7 +121,6 @@ const SearchPage = () => {
         axios.request(searchOptions)
             .then((response) => {
                 setHitList(response.data.results);
-                console.log(response.data.results)
             })
             .catch((error) => {
                 console.error(error);
@@ -153,14 +153,10 @@ const SearchPage = () => {
                     {Object.keys(hitList).map((key) => {
                         const hitItem = hitList[key];
                         return (
-                            <div>
-                                {/* <li key={hitItem.id}>{hitItem.title}</li>
-                                <li key={hitItem.id}
-                                    onClick={() => setClickedID(hitItem.id)}>
-                                    <small>{hitItem.sourceUrl}</small>
-                                </li> */}
+                            <div key={hitItem.id}>
 
-                                <li key={hitItem.id} onClick={() => setClickedID(hitItem.id)}>
+
+                                <li onClick={() => setClickedID(hitItem.id)}>
                                     {hitItem.title}<br />
                                     <small>{hitItem.sourceUrl}</small>
                                 </li>

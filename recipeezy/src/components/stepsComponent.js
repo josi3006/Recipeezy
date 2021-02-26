@@ -5,9 +5,8 @@
 const StepsPage = (props) => {
 
     return (
-        <div>
 
-
+    <div className="readable">
 
             {/* This maps recipe STEPS list to page */}
 
@@ -18,7 +17,7 @@ const StepsPage = (props) => {
                         <div key={recipeStep.number}>
                             <div>
                                 <div>
-                                    <li>{recipeStep.step}</li>
+                                    <li>{recipeStep.step}</li><hr />
                                 </div>
                             </div>
                         </div>

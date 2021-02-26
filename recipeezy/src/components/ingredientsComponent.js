@@ -1,28 +1,29 @@
 // import logo from './logo.svg';
 // import './App.css';
+import React, { useEffect } from "react";
+
 
 function IngredientsPage(props) {
+
+
   return (
 
-    <div>
+    <div className="readable">
 
       <ul>
         {Object.keys(props.recipeIngredients).map((key) => {
           const recipeIngredient = props.recipeIngredients[key];
           return (
-            <div key={recipeIngredient.id}>
-              <div>
-                <div>
-                  <li>{recipeIngredient.originalString}</li>
+            <div key={toString(recipeIngredient.index + recipeIngredient.id)}>
 
-                </div>
-              </div>
+              <li>{recipeIngredient.originalString}</li><hr />
+            
             </div>
           );
         })}
       </ul>
 
-    </div>
+    </div >
   );
 }
 
