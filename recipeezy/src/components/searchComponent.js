@@ -108,7 +108,7 @@ const SearchPage = () => {
                 setShowRecipeStepsIcon(true);
                 console.log('from getRecipeData function ***************');
                 console.dir(response.data.extendedIngredients);
-              
+
             })
             .catch((error) => {
                 console.log(error);
@@ -131,9 +131,8 @@ const SearchPage = () => {
 
     return (
 
-        <div>
-
-
+        <div className="mainDiv">
+           
 
             <Navbar
                 showHitListIcon={showHitListIcon}
@@ -149,24 +148,25 @@ const SearchPage = () => {
 
             {/* This maps SEARCH HIT list to page */}
             { showHitList ?
-                <ul>
-                    {Object.keys(hitList).map((key) => {
-                        const hitItem = hitList[key];
-                        return (
-                            <div key={hitItem.id}>
+                <div className="readable">
+                    <ul>
+                        {Object.keys(hitList).map((key) => {
+                            const hitItem = hitList[key];
+                            return (
+                                <div key={hitItem.id}>
 
 
-                                <li onClick={() => setClickedID(hitItem.id)}>
-                                    {hitItem.title}<br />
-                                    <small>{hitItem.sourceUrl}</small>
-                                </li>
+                                    <li onClick={() => setClickedID(hitItem.id)}>
+                                        {hitItem.title}<br />
+                                        <small>{hitItem.sourceUrl}</small>
+                                    </li>
 
 
 
-                            </div>
-                        );
-                    })}
-                </ul> : null}
+                                </div>
+                            );
+                        })}
+                    </ul></div> : null}
 
 
             {/* This maps recipe INGREDIENTS list to page */}
@@ -184,7 +184,7 @@ const SearchPage = () => {
                         <div className='col s12 narrow'>
                             <div className='form-group'>
                                 <input
-                                    className='form-control'
+                                    className='form-control textinput'
                                     placeholder='Search'
                                     onChange={(event) => setSearchTerms(event.currentTarget.value)}
                                     name='searchterms'
