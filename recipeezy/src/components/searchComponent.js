@@ -157,7 +157,7 @@ const SearchPage = () => {
 
                                     <li onClick={() => setClickedID(hitItem.id)}>
                                         {hitItem.title}<br />
-                                        <small>{hitItem.sourceUrl}</small>
+                                        <p className="urltext">{hitItem.sourceUrl}</p>
                                     </li>
 
 

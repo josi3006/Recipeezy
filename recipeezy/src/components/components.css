@@ -6,7 +6,7 @@
 } 
 
 body {
-    font-size: 2vw;
+    font-size: 62.5%;
     background-image: url('../images/imageBig.jpg');
     background-size: cover;
     background-position: center;
@@ -21,13 +21,13 @@ body {
     display: flex;
     justify-content: space-around;
     width: 100vw;
-    background-color: transparent;
+    background-color: rgba(0,0,0,.8);
 }
 
 
 
 .contentdiv {
-    font-size: 3.0em;
+    font-size: 1.75em;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-align: left;
@@ -35,6 +35,12 @@ body {
     background-color: rgba(0,0,0,.8);
     border-radius: 2em;
     margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.urltext {
+    font-size: .5em;
 }
 
 
