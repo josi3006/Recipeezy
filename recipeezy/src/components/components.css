@@ -21,7 +21,11 @@ body {
     display: flex;
     justify-content: space-around;
     width: 100vw;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgb(10,10,10);
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    right: 0;
 }
 
 
@@ -29,14 +33,17 @@ body {
 .contentdiv {
     font-size: 1.75em;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: #cecece;
     text-align: left;
-    width: 90vw;
-    background-color: rgba(0,0,0,.8);
-    border-radius: 2em;
+    width: 92.5vw;
+    background-color: rgba(10,10,10,.8);
+    border-radius: 1em;
     margin: 0 auto;
+    margin-top: 3em;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    padding: 1em .5em .5em .5em;
+
 }
 
 .urltext {
@@ -46,6 +53,10 @@ body {
 
 li {
     list-style-type: none;  /* removes bullets */
+}
+
+ul {
+    padding: 0;
 }
 
 .material-icons-outlined {

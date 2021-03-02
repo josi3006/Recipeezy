@@ -129,9 +129,9 @@ const SearchPage = () => {
 
     return (
 
+
         <div>
 
-            {console.log('ingredientlist? ' + showIngredientList)}
 
             <Navbar
                 showHitListIcon={showHitListIcon}
@@ -201,6 +201,7 @@ const SearchPage = () => {
 
 
         </div >
+
     );
 }
 

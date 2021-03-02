@@ -14,11 +14,9 @@ function IngredientsPage(props) {
         {Object.keys(props.recipeIngredients).map((key) => {
           const recipeIngredient = props.recipeIngredients[key];
           return (
-            <div key={toString(recipeIngredient.index + recipeIngredient.id)}>
-
-              <li>{recipeIngredient.originalString}</li><hr />
-            
-            </div>
+            <>
+              <li key={toString(recipeIngredient.index + recipeIngredient.id)}>{recipeIngredient.originalString}</li><hr />
+            </>
           );
         })}
       </ul>
