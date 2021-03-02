@@ -72,5 +72,16 @@ ul {
 
 
 .textinput {
-    opacity: 0.5;
+    background-color: rgba(10,10,10,.8);
+    color: #cecece;
+
+}
+
+form {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
 }

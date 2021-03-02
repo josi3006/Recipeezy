@@ -178,21 +178,19 @@ const SearchPage = () => {
 
             {/* This is the search form */}
             {showSearchBar ?
-                <form className="m-5">
-                    <div className='row d-flex justify-content-center'>
-                        <div className='col s12 narrow'>
-                            <div className='form-group'>
-                                <input
-                                    className='form-control textinput'
-                                    placeholder='Search'
-                                    onChange={(event) => setSearchTerms(event.currentTarget.value)}
-                                    name='searchterms'
-                                    id='searchtermsbox'
-                                    value={searchTerms}
-                                />
-                            </div>
-                        </div>
+                <form>
+
+                    <div className='form-group'>
+                        <input
+                            className='form-control textinput'
+                            placeholder='Search'
+                            onChange={(event) => setSearchTerms(event.currentTarget.value)}
+                            name='searchterms'
+                            id='searchtermsbox'
+                            value={searchTerms}
+                        />
                     </div>
+
 
                     <button onClick={searchButton}>Search</button>
 
