@@ -8,7 +8,7 @@ function IngredientsPage(props) {
 
   return (
 
-    <div className="readable">
+    <div className="contentdiv">
 
       <ul>
         {Object.keys(props.recipeIngredients).map((key) => {

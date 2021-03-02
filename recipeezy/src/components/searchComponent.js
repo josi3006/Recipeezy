@@ -129,7 +129,7 @@ const SearchPage = () => {
 
     return (
 
-        <div className="mainDiv">
+        <div>
 
             {console.log('ingredientlist? ' + showIngredientList)}
 
@@ -147,7 +147,7 @@ const SearchPage = () => {
 
             {/* This maps SEARCH HIT list to page */}
             { showHitList ?
-                <div className="readable">
+                <div className="contentdiv">
                     <ul>
                         {Object.keys(hitList).map((key) => {
                             const hitItem = hitList[key];

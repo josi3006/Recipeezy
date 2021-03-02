@@ -6,7 +6,7 @@ const StepsPage = (props) => {
 
     return (
 
-    <div className="readable">
+    <div className="contentdiv">
 
             {/* This maps recipe STEPS list to page */}
 
