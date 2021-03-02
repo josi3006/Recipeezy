@@ -192,7 +192,10 @@ const SearchPage = () => {
                     </div>
 
 
-                    <button onClick={searchButton}>Search</button>
+                    <div
+                        className="buttondiv"
+                        onClick={searchButton}>Search
+                    </div>
 
                 </form> : null}
 
