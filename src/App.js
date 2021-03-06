@@ -17,28 +17,30 @@ function App() {
 
     <div className="App">
 
+      <SearchPage />
 
-<Router>           
-
-
-                <Route
-                    path="/"
-                    component={SearchPage}
-                    exact
-                />
+{/* 
+      <Router>
 
 
-                <Route
-                    path="/ingredients"
-                    component={IngredientsPage}
-                />
+        <Route
+          path="/"
+          component={SearchPage}
+          exact
+        />
 
-                <Route
-                    path="/steps"
-                    component={StepsPage}
-                />
 
-            </Router>
+        <Route
+          path="/ingredients"
+          component={IngredientsPage}
+        />
+
+        <Route
+          path="/steps"
+          component={StepsPage}
+        />
+
+      </Router> */}
 
 
     </div>
