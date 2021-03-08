@@ -63,6 +63,7 @@ ul {
     color: #4bccff;
     font-size: 3.6em;
     cursor: pointer;
+    text-rendering: optimizeLegibility;
 }
 
 .narrow {
