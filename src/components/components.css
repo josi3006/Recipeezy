@@ -64,7 +64,22 @@ ul {
     font-size: 3.6em;
     cursor: pointer;
     text-rendering: optimizeLegibility;
+
+
+     /* Support for all WebKit browsers. */
+     -webkit-font-smoothing: antialiased;
+    
+   
+     /* Support for Firefox. */
+     -moz-osx-font-smoothing: grayscale;
+   
+     /* Support for IE. */
+     font-feature-settings: 'liga';
+
+
 }
+
+
 
 .narrow {
     max-width: 50vw
