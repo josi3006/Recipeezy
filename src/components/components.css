@@ -60,7 +60,7 @@ ul {
 }
 
 .material-icons-outlined {
-    color: #75ffff;
+    color: #ff0000;
     font-size: 3.6em;
     cursor: pointer;
 }
@@ -100,9 +100,9 @@ ul {
 
 .buttondiv {
     background-color:rgba(10,10,10,.8);
-    border: 1px solid #75ffff;
+    border: 1px solid #ff0000;
     border-radius: .25em;
-    color: #75ffff;
+    color: #ff0000;
     font-size: 1em;
     cursor: pointer;
     width: 120px;
@@ -110,7 +110,7 @@ ul {
 }
 
 .buttondiv:hover {
-    background-color:#75ffff;
+    background-color:#ff0000;
     border: 1px solid rgba(10,10,10,.8);
     border-radius: .25em;
     color: rgba(10,10,10,.8);
