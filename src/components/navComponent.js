@@ -8,17 +8,17 @@ function Navbar(props) {
 
         <div className="container-fluid navdiv">
 
-            <i className="material-icons-outlined" onClick={props.resetEverythingButton}>home</i>
+            <i className="material-icons-outlined" onClick={props.resetEverythingButton}>&#xe88a;</i>
 
 
             { props.showHitListIcon ?
-                <i className="material-icons-outlined" onClick={props.reShowHitListButton}>youtube_searched_for</i> : null}
+                <i className="material-icons-outlined" onClick={props.reShowHitListButton}>&#xe8fa;</i> : null}
 
             { props.showIngredientListIcon ?
-                <i className="material-icons-outlined" onClick={props.showIngredientsButton}>local_grocery_store</i> : null}
+                <i className="material-icons-outlined" onClick={props.showIngredientsButton}>&#xe547;</i> : null}
 
             { props.showRecipeStepsIcon ?
-                <i className="material-icons-outlined" onClick={props.showRecipeStepsButton}>format_list_numbered</i> : null}
+                <i className="material-icons-outlined" onClick={props.showRecipeStepsButton}>&#xe242;</i> : null}
 
 
         </div>
