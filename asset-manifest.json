@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Recipeezy/static/css/main.dfe13067.chunk.css",
+    "main.css": "/Recipeezy/static/css/main.86a95435.chunk.css",
     "main.js": "/Recipeezy/static/js/main.10767ad9.chunk.js",
     "main.js.map": "/Recipeezy/static/js/main.10767ad9.chunk.js.map",
     "runtime-main.js": "/Recipeezy/static/js/runtime-main.0c146fd4.js",
@@ -12,7 +12,7 @@
     "static/js/3.e7f99d71.chunk.js.map": "/Recipeezy/static/js/3.e7f99d71.chunk.js.map",
     "index.html": "/Recipeezy/index.html",
     "static/css/2.150d169a.chunk.css.map": "/Recipeezy/static/css/2.150d169a.chunk.css.map",
-    "static/css/main.dfe13067.chunk.css.map": "/Recipeezy/static/css/main.dfe13067.chunk.css.map",
+    "static/css/main.86a95435.chunk.css.map": "/Recipeezy/static/css/main.86a95435.chunk.css.map",
     "static/js/2.ff4a8fe5.chunk.js.LICENSE.txt": "/Recipeezy/static/js/2.ff4a8fe5.chunk.js.LICENSE.txt",
     "static/media/components.css": "/Recipeezy/static/media/imageBig.d81a70c5.jpg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.0c146fd4.js",
     "static/css/2.150d169a.chunk.css",
     "static/js/2.ff4a8fe5.chunk.js",
-    "static/css/main.dfe13067.chunk.css",
+    "static/css/main.86a95435.chunk.css",
     "static/js/main.10767ad9.chunk.js"
   ]
 }
