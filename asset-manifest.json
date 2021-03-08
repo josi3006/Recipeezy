@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/recipeezy/static/css/main.a019e17b.chunk.css",
-    "main.js": "/recipeezy/static/js/main.10767ad9.chunk.js",
-    "main.js.map": "/recipeezy/static/js/main.10767ad9.chunk.js.map",
-    "runtime-main.js": "/recipeezy/static/js/runtime-main.295cec1f.js",
-    "runtime-main.js.map": "/recipeezy/static/js/runtime-main.295cec1f.js.map",
-    "static/css/2.150d169a.chunk.css": "/recipeezy/static/css/2.150d169a.chunk.css",
-    "static/js/2.1f892771.chunk.js": "/recipeezy/static/js/2.1f892771.chunk.js",
-    "static/js/2.1f892771.chunk.js.map": "/recipeezy/static/js/2.1f892771.chunk.js.map",
-    "static/js/3.e7f99d71.chunk.js": "/recipeezy/static/js/3.e7f99d71.chunk.js",
-    "static/js/3.e7f99d71.chunk.js.map": "/recipeezy/static/js/3.e7f99d71.chunk.js.map",
-    "index.html": "/recipeezy/index.html",
-    "static/css/2.150d169a.chunk.css.map": "/recipeezy/static/css/2.150d169a.chunk.css.map",
-    "static/css/main.a019e17b.chunk.css.map": "/recipeezy/static/css/main.a019e17b.chunk.css.map",
-    "static/js/2.1f892771.chunk.js.LICENSE.txt": "/recipeezy/static/js/2.1f892771.chunk.js.LICENSE.txt",
-    "static/media/components.css": "/recipeezy/static/media/imageBig.d81a70c5.jpg"
+    "main.css": "/Recipeezy/static/css/main.dfe13067.chunk.css",
+    "main.js": "/Recipeezy/static/js/main.10767ad9.chunk.js",
+    "main.js.map": "/Recipeezy/static/js/main.10767ad9.chunk.js.map",
+    "runtime-main.js": "/Recipeezy/static/js/runtime-main.0c146fd4.js",
+    "runtime-main.js.map": "/Recipeezy/static/js/runtime-main.0c146fd4.js.map",
+    "static/css/2.150d169a.chunk.css": "/Recipeezy/static/css/2.150d169a.chunk.css",
+    "static/js/2.ff4a8fe5.chunk.js": "/Recipeezy/static/js/2.ff4a8fe5.chunk.js",
+    "static/js/2.ff4a8fe5.chunk.js.map": "/Recipeezy/static/js/2.ff4a8fe5.chunk.js.map",
+    "static/js/3.e7f99d71.chunk.js": "/Recipeezy/static/js/3.e7f99d71.chunk.js",
+    "static/js/3.e7f99d71.chunk.js.map": "/Recipeezy/static/js/3.e7f99d71.chunk.js.map",
+    "index.html": "/Recipeezy/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/Recipeezy/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.dfe13067.chunk.css.map": "/Recipeezy/static/css/main.dfe13067.chunk.css.map",
+    "static/js/2.ff4a8fe5.chunk.js.LICENSE.txt": "/Recipeezy/static/js/2.ff4a8fe5.chunk.js.LICENSE.txt",
+    "static/media/components.css": "/Recipeezy/static/media/imageBig.d81a70c5.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.295cec1f.js",
+    "static/js/runtime-main.0c146fd4.js",
     "static/css/2.150d169a.chunk.css",
-    "static/js/2.1f892771.chunk.js",
-    "static/css/main.a019e17b.chunk.css",
+    "static/js/2.ff4a8fe5.chunk.js",
+    "static/css/main.dfe13067.chunk.css",
     "static/js/main.10767ad9.chunk.js"
   ]
 }
