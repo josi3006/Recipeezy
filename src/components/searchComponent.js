@@ -189,6 +189,7 @@ const SearchPage = () => {
                             id='searchtermsbox'
                             value={searchTerms}
                         />
+                        <label for='searchtermsbox'>Enter Search Terms</label>
                     </div>
 
 
