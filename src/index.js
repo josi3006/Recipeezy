@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './index.css';
 import App from './App';
+import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,5 +17,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+serviceWorker.register();
 
 reportWebVitals();
