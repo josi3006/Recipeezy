@@ -14,15 +14,14 @@ function Navbar(props) {
 
 
             { props.showHitListIcon ?
-                <i className="material-icons-outlined icons" onClick={props.reShowHitListButton}>&#xe8fa;</i> : null}
-
+                <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i> : null}
 
 
             { props.showIngredientListIcon ?
-                <i className="material-icons-outlined icons" onClick={props.showIngredientsButton}>&#xe547;</i> : null}
+                <i className="fi-xnluhl-shopping-cart icons" onClick={props.showIngredientsButton}></i> : null}
 
             { props.showRecipeStepsIcon ?
-                <i className="material-icons-outlined icons" onClick={props.showRecipeStepsButton}>&#xe242;</i> : null}
+                <i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i> : null}
 
 
         </div>
