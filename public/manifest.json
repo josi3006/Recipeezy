@@ -1,6 +1,7 @@
 {
   "short_name": "Recipeezy",
-  "name": "No chaff recipe generator",
+  "name": "Recipeezy",
+  "description": "A no-chaff recipe generator",
   "icons": [
     {
       "src": "Ricon.png",

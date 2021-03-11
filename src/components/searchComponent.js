@@ -187,9 +187,9 @@ const SearchPage = () => {
                             onChange={(event) => setSearchTerms(event.currentTarget.value)}
                             name='searchterms'
                             id='searchtermsbox'
-                            value={searchTerms}
+                            value={searchTerms} 
+                            aria-label='Enter Search Terms Here'
                         />
-                        <label for='searchtermsbox'>Enter Search Terms</label>
                     </div>
 
 
