@@ -60,9 +60,7 @@ ul {
 }
 
 .material-icons-outlined {
-    color: #4bccff;
-    font-size: 3.6em;
-    cursor: pointer;
+  
     text-rendering: optimizeLegibility;
 
 
@@ -75,8 +73,12 @@ ul {
    
      /* Support for IE. */
      font-feature-settings: 'liga';
+}
 
-
+.icons {
+    color: #4bccff;
+    font-size: 3.6em;
+    cursor: pointer;
 }
 
 
