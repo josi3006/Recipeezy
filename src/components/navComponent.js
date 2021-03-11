@@ -10,7 +10,7 @@ function Navbar(props) {
 
             {/* <i className="material-icons-outlined icons" onClick={props.resetEverythingButton}>&#xe88a;</i> */}
 
-            <i className="fi-xnluxl-home" onClick={props.resetEverythingButton}></i>
+            <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
 
 
             { props.showHitListIcon ?
