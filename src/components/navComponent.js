@@ -23,7 +23,9 @@ function Navbar(props) {
             { props.showRecipeStepsIcon ?
                 <i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i> : null}
 
-
+<p>here it is</p>
+            <i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i>
+<p>there it was</p>
         </div>
 
 
