@@ -36,6 +36,7 @@ const SearchPage = () => {
 
     const hitItemClicked = () => {
         getRecipeData();
+        console.log('hit item clicked');
     };
 
 
@@ -55,6 +56,7 @@ const SearchPage = () => {
         setShowRecipeSteps(false);
         setShowSearchBar(false);
         setShowIngredientList(true);
+        console.log('showed ingrefdients button');
     };
 
     const showRecipeStepsButton = () => {
@@ -62,6 +64,7 @@ const SearchPage = () => {
         setShowIngredientList(false);
         setShowSearchBar(false);
         setShowRecipeSteps(true);
+        console.log('showed recipe steps button');
     };
 
     const resetEverythingButton = () => {
