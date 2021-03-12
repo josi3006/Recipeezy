@@ -36,7 +36,9 @@ const SearchPage = () => {
 
     const hitItemClicked = () => {
         getRecipeData();
-        console.log('showrecipestepsicon' + showRecipeStepsIcon);
+        console.log('showrecipestepsicon in hitItemClicked');
+        console.log(showRecipeStepsIcon);
+
     };
 
 
@@ -109,6 +111,8 @@ const SearchPage = () => {
                 setShowHitList(false);
                 setShowIngredientList(true);
                 setShowRecipeSteps(true);
+                console.log('showrecipestepsicon in getrecipedata');
+                console.log(showRecipeStepsIcon);
             })
             .catch((error) => {
                 console.log(error);
