@@ -29,14 +29,12 @@ const SearchPage = () => {
 
     const searchButton = () => {
         makeTheCall();
-        friconix_update();
         setShowSearchBar(false);
         setShowHitList(true);
         setShowHitListIcon(true);
     };
 
     const hitItemClicked = () => {
-        friconix_update();
         getRecipeData();
     };
 
@@ -47,14 +45,12 @@ const SearchPage = () => {
     }, [clickedID]);
 
     const reShowHitListButton = () => {
-        friconix_update();
         setShowIngredientList(false);
         setShowRecipeSteps(false);
         setShowHitList(true);
     };
 
     const showIngredientsButton = () => {
-        friconix_update();
         setShowHitList(false);
         setShowRecipeSteps(false);
         setShowSearchBar(false);
@@ -62,7 +58,6 @@ const SearchPage = () => {
     };
 
     const showRecipeStepsButton = () => {
-        friconix_update();
         setShowHitList(false);
         setShowIngredientList(false);
         setShowSearchBar(false);
@@ -70,7 +65,6 @@ const SearchPage = () => {
     };
 
     const resetEverythingButton = () => {
-        friconix_update();
         window.location.reload();
     };
 
