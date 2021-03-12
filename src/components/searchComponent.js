@@ -28,17 +28,14 @@ const SearchPage = () => {
     // Navigation functions triggered by button clicks
 
     const searchButton = () => {
+        setShowHitListIcon(true);
         makeTheCall();
         setShowSearchBar(false);
         setShowHitList(true);
-        setShowHitListIcon(true);
     };
 
     const hitItemClicked = () => {
         getRecipeData();
-        console.log('showrecipestepsicon in hitItemClicked');
-        console.log(showRecipeStepsIcon);
-
     };
 
 
@@ -58,7 +55,6 @@ const SearchPage = () => {
         setShowRecipeSteps(false);
         setShowSearchBar(false);
         setShowIngredientList(true);
-        console.log('showed ingrefdients button');
     };
 
     const showRecipeStepsButton = () => {
@@ -66,7 +62,6 @@ const SearchPage = () => {
         setShowIngredientList(false);
         setShowSearchBar(false);
         setShowRecipeSteps(true);
-        console.log('showed recipe steps button');
     };
 
     const resetEverythingButton = () => {
@@ -104,15 +99,13 @@ const SearchPage = () => {
     const getRecipeData = () => {
         axios.request(recipeDataCall)
             .then((response) => {
-                setRecipeIngredients(response.data.extendedIngredients);
-                setRecipeSteps(response.data.analyzedInstructions[0].steps);
                 setShowIngredientListIcon(true);
                 setShowRecipeStepsIcon(true);
+                setRecipeIngredients(response.data.extendedIngredients);
+                setRecipeSteps(response.data.analyzedInstructions[0].steps);
                 setShowHitList(false);
                 setShowIngredientList(true);
                 setShowRecipeSteps(true);
-                console.log('showrecipestepsicon in getrecipedata');
-                console.log(showRecipeStepsIcon);
             })
             .catch((error) => {
                 console.log(error);
@@ -193,7 +186,7 @@ const SearchPage = () => {
                             onChange={(event) => setSearchTerms(event.currentTarget.value)}
                             name='searchterms'
                             id='searchtermsbox'
-                            value={searchTerms} 
+                            value={searchTerms}
                             aria-label='Enter Search Terms Here'
                         />
                     </div>
