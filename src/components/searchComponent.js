@@ -36,7 +36,7 @@ const SearchPage = () => {
 
     const hitItemClicked = () => {
         getRecipeData();
-        console.log('hit item clicked');
+        console.log('showrecipestepsicon' + showRecipeStepsIcon);
     };
 
 
