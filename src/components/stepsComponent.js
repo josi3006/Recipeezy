@@ -8,14 +8,14 @@ const StepsPage = (props) => {
 
         <div className="contentdiv">
 
-            {/* This maps recipe STEPS list to page */}
 
             {
                 props.showRecipeStepsIcon === true ?
 
+                    < ul >
+                    {
 
-                    <ul>
-                        {Object.keys(props.recipeSteps).map((key) => {
+                        Object.keys(props.recipeSteps).map((key) => {
                             const recipeStep = props.recipeSteps[key];
                             return (
                                 <div key={recipeStep.number}>
@@ -26,12 +26,13 @@ const StepsPage = (props) => {
                                     </div>
                                 </div>
                             );
-                        })}
+                        })
+                    }
                     </ul> :
-                    <div>Loading...</div>
-            }
+    <div>Loading...</div>
+}
 
-        </div>
+        </div >
     );
 };
 

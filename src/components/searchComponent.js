@@ -35,6 +35,7 @@ const SearchPage = () => {
     };
 
     const hitItemClicked = () => {
+        setShowRecipeStepsIcon(true);
         getRecipeData();
     };
 
@@ -100,7 +101,6 @@ const SearchPage = () => {
         axios.request(recipeDataCall)
             .then((response) => {
                 setShowIngredientListIcon(true);
-                setShowRecipeStepsIcon(true);
                 setRecipeIngredients(response.data.extendedIngredients);
                 setRecipeSteps(response.data.analyzedInstructions[0].steps);
                 setShowHitList(false);
@@ -172,9 +172,7 @@ const SearchPage = () => {
 
 
             {/* This maps recipe STEPS list to page */}
-            {showRecipeSteps ? <StepsPage 
-                            showRecipeStepsIcon={showRecipeStepsIcon}
-                            recipeSteps={recipeSteps} /> : null}
+            {showRecipeSteps ? <StepsPage recipeSteps={recipeSteps} /> : null}
 
 
             {/* This is the search form */}
