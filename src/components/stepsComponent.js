@@ -11,7 +11,7 @@ const StepsPage = (props) => {
             {/* This maps recipe STEPS list to page */}
 
             {
-                props.showRecipeStepsIcon(true) ?
+                props.showRecipeStepsIcon === true ?
 
 
                     <ul>
