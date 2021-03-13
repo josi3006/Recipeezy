@@ -35,8 +35,6 @@ const SearchPage = () => {
     };
 
     const hitItemClicked = () => {
-        setShowIngredientListIcon(true);
-        setShowRecipeStepsIcon(true); 
         getRecipeData();
     };
 
@@ -104,7 +102,8 @@ const SearchPage = () => {
 
         axios.request(recipeDataCall)
             .then((response) => {
-
+                setShowIngredientListIcon(true);
+                setShowRecipeStepsIcon(true); 
                 setRecipeIngredients(response.data.extendedIngredients);
                 setRecipeSteps(response.data.analyzedInstructions[0].steps);
                 setShowHitList(false);
