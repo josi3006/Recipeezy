@@ -9,28 +9,24 @@ const StepsPage = (props) => {
         <div className="contentdiv">
 
 
-            {
-                props.showRecipeStepsIcon === true ?
+            < ul >
+                {
 
-                    < ul >
-                    {
-
-                        Object.keys(props.recipeSteps).map((key) => {
-                            const recipeStep = props.recipeSteps[key];
-                            return (
-                                <div key={recipeStep.number}>
+                    Object.keys(props.recipeSteps).map((key) => {
+                        const recipeStep = props.recipeSteps[key];
+                        return (
+                            <div key={recipeStep.number}>
+                                <div>
                                     <div>
-                                        <div>
-                                            <li>{recipeStep.step}</li><hr />
-                                        </div>
+                                        <li>{recipeStep.step}</li><hr />
                                     </div>
                                 </div>
-                            );
-                        })
-                    }
-                    </ul> :
-    <div>Loading...</div>
-}
+                            </div>
+                        );
+                    })
+                }
+            </ul>
+
 
         </div >
     );
