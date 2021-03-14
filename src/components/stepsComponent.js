@@ -9,6 +9,12 @@ const StepsPage = (props) => {
         <div className="contentdiv">
 
 
+<button onClick={() => console.log('show me, homie ' + props.showRecipeStepsIcon)}>show me</button>
+<button onClick={() => props.setShowRecipeStepsIcon(true)}>update it!</button>
+
+
+
+
             < ul >
                 {
 
