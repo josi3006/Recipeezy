@@ -175,9 +175,7 @@ const SearchPage = () => {
 
 
             {/* This maps recipe STEPS list to page */}
-            {showRecipeSteps ? <StepsPage recipeSteps={recipeSteps}
-                showRecipeStepsIcon={showRecipeStepsIcon}
-            /> : null}
+            {showRecipeSteps ? <StepsPage recipeSteps={recipeSteps} /> : null}
 
 
             {/* This is the search form */}

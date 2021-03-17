@@ -9,9 +9,7 @@ const StepsPage = (props) => {
         <div className="contentdiv">
 
 
-<button onClick={() => console.log('show me, homie ' + props.showRecipeStepsIcon)}>show me</button>
-
-
+            <button onClick={() => console.log('show me, homie ' + props.showRecipeStepsIcon)}>show me</button>
 
 
             < ul >
