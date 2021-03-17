@@ -1,5 +1,5 @@
 import './components.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 function Navbar(props) {
