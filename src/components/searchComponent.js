@@ -106,6 +106,10 @@ const SearchPage = () => {
                 console.log('in axios call ' + showRecipeStepsIcon);
                 setRecipeIngredients(response.data.extendedIngredients);
                 setRecipeSteps(response.data.analyzedInstructions[0].steps);
+            })
+            .then(() => {
+
+
                 setShowHitList(false);
                 setShowIngredientList(true);
                 setShowRecipeSteps(true);
