@@ -4,9 +4,9 @@ import React, { useEffect } from 'react';
 
 function Navbar(props) {
 
-    useEffect(() => {
-        props.showRecipeStepsIcon(true);
-    }, [props.showRecipeSteps]);
+    // useEffect(() => {
+    //     props.showRecipeStepsIcon(true);
+    // }, [props.showRecipeSteps]);
   
 
     return (
