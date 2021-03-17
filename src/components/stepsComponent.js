@@ -10,7 +10,6 @@ const StepsPage = (props) => {
 
 
 <button onClick={() => console.log('show me, homie ' + props.showRecipeStepsIcon)}>show me</button>
-<button onClick={() => props.setShowRecipeStepsIcon(true)}>update it!</button>
 
 
 
