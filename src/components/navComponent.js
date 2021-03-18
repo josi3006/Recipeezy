@@ -13,25 +13,22 @@ function Navbar(props) {
 
             { console.log('Inside the navbar render statement ' + props.showRecipeStepsIcon)}
 
-            {/* <i className="material-icons-outlined icons" onClick={props.resetEverythingButton}>&#xe88a;</i> */}
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
+
 
             {props.showIngredientListIcon ? console.log('It is ' + props.showIngredientListIcon) : console.log('Womp womp.')}
 
 
             { props.showHitListIcon ?
-                <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i> : null}
+                (<i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i>) : null}
 
-
-            {/* { props.showIngredientListIcon ?
-                <i className="fi-xnluhl-shopping-cart icons" onClick={props.showIngredientsButton}></i> : null} */}
 
             { props.showIngredientListIcon ?
-                <i className="fi-xnluhl-shopping-cart icons" onClick={props.showIngredientsButton}></i> : null}
+                (<i className="fi-xnluhl-shopping-cart icons" onClick={props.showIngredientsButton}></i>) : null}
 
             { props.showRecipeStepsIcon ?
-                <i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i> : null}
+                (<i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i>) : null}
 
 
             <button onClick={() => console.log('show me, homie ' + props.showRecipeStepsIcon)}>show me</button>
