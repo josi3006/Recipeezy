@@ -1,15 +1,17 @@
 import './components.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 
 function Navbar(props) {
 
-const testVar = true;
+const [testVar, setTestVar] = useState(false);
 
 
     return (
 
         <div className="container-fluid navdiv">
+
+            <button onClick={() => setTestVar(true)}>ChangeIt</button>
 
             { console.log('Inside the navbar render statement ' + props.showRecipeStepsIcon)}
 
