@@ -17,6 +17,8 @@ function Navbar(props) {
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
 
+            <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i>
+            
 
             { props.showHitListIcon ?
                 <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i> : null}
