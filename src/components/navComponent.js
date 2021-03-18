@@ -1,24 +1,23 @@
 import './components.css';
-import React, { useState } from 'react';
+import React from 'react';
 
 
 function Navbar(props) {
 
-    const [showIngredientListIcon, setShowIngredientListIcon] = useState(false);
 
-    props.recipeIngredients === "" ? setShowIngredientListIcon(false) : setShowIngredientListIcon(true);
 
 
     return (
 
         <div className="container-fluid navdiv">
 
+            { console.log('Inside the navbar render statement ' + showRecipeStepsIcon) }
+
             {/* <i className="material-icons-outlined icons" onClick={props.resetEverythingButton}>&#xe88a;</i> */}
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
 
-            <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i>
-            
+
 
             { props.showHitListIcon ?
                 <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i> : null}
