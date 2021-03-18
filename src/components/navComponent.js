@@ -16,6 +16,7 @@ function Navbar(props) {
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
 
+            <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i>
 
             {props.showIngredientListIcon ? console.log('Condtl in nav render ' + props.showIngredientListIcon) : console.log('Cond in nav render ' + props.showIngredientListIcon)}
 
