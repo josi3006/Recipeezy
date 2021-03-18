@@ -11,12 +11,13 @@ function Navbar(props) {
 
         <div className="container-fluid navdiv">
 
-            { console.log('Inside the navbar render statement ' + props.showRecipeStepsIcon) }
+            { console.log('Inside the navbar render statement ' + props.showRecipeStepsIcon)}
 
             {/* <i className="material-icons-outlined icons" onClick={props.resetEverythingButton}>&#xe88a;</i> */}
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
 
+            {props.showIngredientListIcon ? console.log('It is ' + props.showIngredientListIcon) : console.log('Womp womp.')}
 
 
             { props.showHitListIcon ?
