@@ -20,7 +20,6 @@ const SearchPage = () => {
     const [showRecipeSteps, setShowRecipeSteps] = useState(false);
     const [showIngredientList, setShowIngredientList] = useState(false);
     const [showHitListIcon, setShowHitListIcon] = useState(false);
-    const [showIngredientListIcon, setShowIngredientListIcon] = useState(false);
     const [showRecipeStepsIcon, setShowRecipeStepsIcon] = useState(false);
 
 
@@ -101,7 +100,7 @@ const SearchPage = () => {
 
         axios.request(recipeDataCall)
             .then((response) => {
-                setShowIngredientListIcon(true);
+                // setShowIngredientListIcon(true);
                 setShowRecipeStepsIcon(true);
                 console.log('in axios call ' + showRecipeStepsIcon);
                 setRecipeIngredients(response.data.extendedIngredients);
@@ -141,13 +140,13 @@ const SearchPage = () => {
 
             <Navbar
                 showHitListIcon={showHitListIcon}
-                showIngredientListIcon={showIngredientListIcon}
+                // showIngredientListIcon={showIngredientListIcon}
                 showRecipeStepsIcon={showRecipeStepsIcon}
                 reShowHitListButton={reShowHitListButton}
                 showIngredientsButton={showIngredientsButton}
                 showRecipeStepsButton={showRecipeStepsButton}
-                resetEverythingButton={resetEverythingButton} />
-
+                resetEverythingButton={resetEverythingButton} 
+                recipeIngredients={recipeIngredients} />
 
 
 

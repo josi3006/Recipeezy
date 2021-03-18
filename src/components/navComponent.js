@@ -4,10 +4,10 @@ import React from 'react';
 
 function Navbar(props) {
 
-    // useEffect(() => {
-    //     props.showRecipeStepsIcon(true);
-    // }, [props.showRecipeSteps]);
-  
+    const [showIngredientListIcon, setShowIngredientListIcon] = useState(false);
+
+    props.recipeIngredients === "" ? setShowIngredientListIcon(false) : setShowIgredientListIcon(true);
+
 
     return (
 
@@ -22,7 +22,10 @@ function Navbar(props) {
                 <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i> : null}
 
 
-            { props.showIngredientListIcon ?
+            {/* { props.showIngredientListIcon ?
+                <i className="fi-xnluhl-shopping-cart icons" onClick={props.showIngredientsButton}></i> : null} */}
+
+            { showIngredientListIcon ?
                 <i className="fi-xnluhl-shopping-cart icons" onClick={props.showIngredientsButton}></i> : null}
 
             { props.showRecipeStepsIcon ?
