@@ -28,7 +28,9 @@ body {
     right: 0;
 }
 
-
+p {
+    color:#4bccff;
+}
 
 .contentdiv {
     font-size: 1.75em;

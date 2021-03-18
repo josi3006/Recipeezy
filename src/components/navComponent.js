@@ -17,7 +17,7 @@ const testVar = true;
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
 
 
-            {testVar ? <p>It's true!</p> : <p>It not is true.</p>}
+            {testVar ? (<p>It's true!</p>) : (<p>It not is true.</p>)}
 
 
             { props.showHitListIcon ?
