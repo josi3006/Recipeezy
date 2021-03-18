@@ -1,12 +1,12 @@
 import './components.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 
 function Navbar(props) {
 
     const [showIngredientListIcon, setShowIngredientListIcon] = useState(false);
 
-    props.recipeIngredients === "" ? setShowIngredientListIcon(false) : setShowIgredientListIcon(true);
+    props.recipeIngredients === "" ? setShowIngredientListIcon(false) : setShowIngredientListIcon(true);
 
 
     return (
