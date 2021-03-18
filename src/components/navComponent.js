@@ -4,7 +4,7 @@ import React from 'react';
 
 function Navbar(props) {
 
-
+const testVar = true;
 
 
     return (
@@ -16,9 +16,8 @@ function Navbar(props) {
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
 
-            <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i>
 
-            {props.showIngredientListIcon ? console.log('Condtl in nav render ' + props.showIngredientListIcon) : console.log('Cond in nav render ' + props.showIngredientListIcon)}
+            {testVar ? console.log('testVar is true!') : console.log('testVar not is true.')}
 
 
             { props.showHitListIcon ?
