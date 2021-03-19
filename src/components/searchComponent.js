@@ -152,7 +152,6 @@ const SearchPage = () => {
                 testVar={testVar}
             />
 
-            <button onClick={() => setTestVar(true)}>ChangeIt</button>
 
 
             {/* This maps SEARCH HIT list to page */}
@@ -176,6 +175,8 @@ const SearchPage = () => {
                             );
                         })}
                     </ul></div> : null}
+
+            <button onClick={() => setTestVar(true)}>ChangeIt</button>
 
 
             {/* This maps recipe INGREDIENTS list to page */}
