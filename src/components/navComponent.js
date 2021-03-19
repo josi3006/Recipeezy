@@ -4,7 +4,10 @@ import React, { useState } from 'react';
 
 function Navbar(props) {
 
-    const iconClass="fi-xnluhl-shopping-cart icons"
+    let iconClass;
+    props.showRecipeStepsIcon
+        ? (iconClass = "fi-xnluhl-shopping-cart icons")
+        : (iconClass = "fi-xnluxl-home icons")
 
     return (
 
