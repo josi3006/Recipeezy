@@ -28,7 +28,7 @@ function Navbar(props) {
                 (<i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i>) : null} */}
 
             { props.showRecipeStepsIcon ?
-                (<img src="https://via.placeholder.com/40" />) : (<p>NO steps icon.</p>)}
+                (<i className="fi-xnluxl-ordered-list icons"></i>) : (<p>NO steps icon.</p>)}
 
 
 
