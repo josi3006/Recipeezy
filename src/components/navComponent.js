@@ -6,8 +6,9 @@ function Navbar(props) {
 
     let iconClass;
     props.showRecipeStepsIcon
-        ? (iconClass = "fi-xnluhl-shopping-cart icons")
-        : (iconClass = "fi-xnluxl-home icons")
+        ? (iconClass = "fi-xnluxl-home icons")
+        : (iconClass = "fi-xnluhl-shopping-cart icons")
+
 
     return (
 
