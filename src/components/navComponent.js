@@ -15,7 +15,7 @@ function Navbar(props) {
 
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
-            <i className="fi-xnluhl-shopping-cart icons"></i>
+            
 
 
 
@@ -30,7 +30,7 @@ function Navbar(props) {
                 (<i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i>) : null} */}
 
 { props.showRecipeStepsIcon ?
-                (<img src="./logo.svg" />) : (<p>NO steps icon.</p>) }
+                (<i className="fi-xnluhl-shopping-cart icons"></i>) : (<p>NO steps icon.</p>) }
 
 
 
