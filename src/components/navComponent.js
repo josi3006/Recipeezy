@@ -15,7 +15,7 @@ function Navbar(props) {
 
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
-            
+            <i className="fi-xnluhl-shopping-cart icons"></i>
 
 
 
