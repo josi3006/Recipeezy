@@ -105,6 +105,7 @@ const SearchPage = () => {
             .then((response) => {
                 setShowIngredientListIcon(true);
                 setShowRecipeStepsIcon(true);
+                setTestVar(true);
                 console.log('in axios call ' + showRecipeStepsIcon);
                 setRecipeIngredients(response.data.extendedIngredients);
                 setRecipeSteps(response.data.analyzedInstructions[0].steps);
@@ -176,7 +177,7 @@ const SearchPage = () => {
                         })}
                     </ul></div> : null}
 
-            <button onClick={() => setTestVar(true)}>ChangeIt</button>
+            {/* <button onClick={() => setTestVar(true)}>ChangeIt</button> */}
 
 
             {/* This maps recipe INGREDIENTS list to page */}
