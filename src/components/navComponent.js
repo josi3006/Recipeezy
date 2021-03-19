@@ -15,7 +15,7 @@ function Navbar(props) {
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
             <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i>
             <i className="fi-xnluhl-shopping-cart icons" onClick={props.showIngredientsButton}></i>
-            <i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i>
+            <i className="fi-xnluxl-ordered-list icons"></i>
 
             { props.showHitListIcon ?
                 (<i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i>) : null}
