@@ -11,12 +11,8 @@ function Navbar(props) {
         <div className="container-fluid navdiv">
 
 
-            { console.log('Inside the navbar render statement ' + props.showRecipeStepsIcon)}
-
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
-            <i className="fi-xnluhl-shopping-cart icons"></i>
-
 
 
             { props.showHitListIcon ?
@@ -30,7 +26,7 @@ function Navbar(props) {
                 (<i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i>) : null} */}
 
 { props.showRecipeStepsIcon ?
-                (<i className="fi-xnluhl-shopping-cart icons"></i>) : (<p>NO steps icon.</p>) }
+                (<i className="fi-xnluxl-home icons"></i>) : (<p>NO steps icon.</p>) }
 
 
 
