@@ -27,8 +27,11 @@ function Navbar(props) {
             { props.showIngredientListIcon ?
                 (<i className="fi-xnluhl-shopping-cart icons" onClick={props.showIngredientsButton}></i>) : null}
 
-            { props.showRecipeStepsIcon ?
-                (<i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i>) : null}
+            {/* { props.showRecipeStepsIcon ?
+                (<i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i>) : null} */}
+
+{ props.showRecipeStepsIcon ?
+                (<p>Steps Icon YES!</p>) : (<p>NO steps icon.</p>) }
 
 
             <button onClick={() => console.log('show me, homie ' + props.showRecipeStepsIcon)}>show me</button>
