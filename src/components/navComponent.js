@@ -10,7 +10,6 @@ function Navbar(props) {
 
         <div className="container-fluid navdiv">
 
-            {iconPicker()}
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
             <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i>
