@@ -31,7 +31,7 @@ function Navbar(props) {
                 (<i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i>) : null} */}
 
 { props.showRecipeStepsIcon ?
-                (<p>Is icon, yes yes!</p>) : (<p>NO steps icon.</p>) }
+                (<img src="../logo.svg" />) : (<p>NO steps icon.</p>) }
 
 
             <button onClick={() => console.log('show me, homie ' + props.showRecipeStepsIcon)}>show me</button>
