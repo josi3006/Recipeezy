@@ -4,13 +4,18 @@ import React, { useState } from 'react';
 
 function Navbar(props) {
 
-
+    const iconPicker = () => {
+        let icon;
+        props.showRecipeStepsIcon
+            ? icon = "<i className='fi-xnluxl-ordered-list icons'></i>"
+            : icon = null;
+    }
 
     return (
 
         <div className="container-fluid navdiv">
 
-
+            {iconPicker()}
 
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
             <i className="fi-xnluxl-link icons" onClick={props.reShowHitListButton}></i>
@@ -27,9 +32,9 @@ function Navbar(props) {
             {/* { props.showRecipeStepsIcon ?
                 (<i className="fi-xnluxl-ordered-list icons" onClick={props.showRecipeStepsButton}></i>) : null} */}
 
-            <i className={props.showRecipeStepsIcon ? "fi-xnluxl-ordered-list icons" : "fi-xnluxl-home icons"}></i>
+            {/* <i className={props.showRecipeStepsIcon ? "fi-xnluxl-ordered-list icons" : "fi-xnluxl-home icons"}></i> */}
 
-
+            {icon}
 
         </div>
 
