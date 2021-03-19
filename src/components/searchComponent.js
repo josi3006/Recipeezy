@@ -23,6 +23,7 @@ const SearchPage = () => {
     const [showRecipeStepsIcon, setShowRecipeStepsIcon] = useState(false);
     const [showIngredientListIcon, setShowIngredientListIcon] = useState(false);
 
+    const [testVar, setTestVar] = useState(false);
 
 
 
@@ -148,8 +149,10 @@ const SearchPage = () => {
                 showIngredientsButton={showIngredientsButton}
                 showRecipeStepsButton={showRecipeStepsButton}
                 resetEverythingButton={resetEverythingButton}
+                testVar={testVar}
             />
 
+            <button onClick={() => setTestVar(true)}>ChangeIt</button>
 
 
             {/* This maps SEARCH HIT list to page */}

@@ -4,14 +4,12 @@ import React, { useState } from 'react';
 
 function Navbar(props) {
 
-const [testVar, setTestVar] = useState(false);
 
 
     return (
 
         <div className="container-fluid navdiv">
 
-            <button onClick={() => setTestVar(true)}>ChangeIt</button>
 
             { console.log('Inside the navbar render statement ' + props.showRecipeStepsIcon)}
 
@@ -19,7 +17,7 @@ const [testVar, setTestVar] = useState(false);
             <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
 
 
-            {testVar ? (<p>It's true!</p>) : (<p>It not is true.</p>)}
+            {props.testVar ? (<p>It's true!</p>) : (<p>It not is true.</p>)}
 
 
             { props.showHitListIcon ?
