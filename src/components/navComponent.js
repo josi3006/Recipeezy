@@ -16,24 +16,28 @@ function Navbar(props) {
             <HomeIconSVG
                 fill="currentColor"
                 style={{ color: "#4bccff" }}
+                onClick={props.resetEverythingButton}
             />
 
             { props.showHitListIcon ?
                 <HitlistIconSVG
                     fill="currentColor"
                     style={{ color: "#4bccff" }}
+                    onClick={props.reShowHitListButton}
                 /> : null}
 
             { props.showIngredientListIcon ?
                 <IngredientListIconSVG
                     fill="currentColor"
                     style={{ color: "#4bccff" }}
+                    onClick={props.showIngredientsButton}
                 /> : null}
 
             { props.showRecipeStepsIcon ?
                 <RecipeStepsIconSVG
                     fill="currentColor"
                     style={{ color: "#4bccff" }}
+                    onClick={props.showRecipeStepsButton}
                 /> : null}
 
         </div>
