@@ -23,9 +23,6 @@ const SearchPage = () => {
     const [showRecipeStepsIcon, setShowRecipeStepsIcon] = useState(false);
     const [showIngredientListIcon, setShowIngredientListIcon] = useState(false);
 
-    const [testVar, setTestVar] = useState(false);
-
-
 
     // Navigation functions triggered by button clicks
 
@@ -99,20 +96,14 @@ const SearchPage = () => {
 
     // API call to get data for our chosen recipe
     const getRecipeData = () => {
-
-
         axios.request(recipeDataCall)
             .then((response) => {
                 setShowIngredientListIcon(true);
                 setShowRecipeStepsIcon(true);
-                setTestVar(true);
-                console.log('in axios call ' + showRecipeStepsIcon);
                 setRecipeIngredients(response.data.extendedIngredients);
                 setRecipeSteps(response.data.analyzedInstructions[0].steps);
             })
             .then(() => {
-
-
                 setShowHitList(false);
                 setShowIngredientList(true);
                 setShowRecipeSteps(true);
@@ -141,7 +132,6 @@ const SearchPage = () => {
 
         <div>
 
-
             <Navbar
                 showHitListIcon={showHitListIcon}
                 showIngredientListIcon={showIngredientListIcon}
@@ -150,7 +140,6 @@ const SearchPage = () => {
                 showIngredientsButton={showIngredientsButton}
                 showRecipeStepsButton={showRecipeStepsButton}
                 resetEverythingButton={resetEverythingButton}
-                testVar={testVar}
             />
 
 
@@ -163,21 +152,15 @@ const SearchPage = () => {
                             const hitItem = hitList[key];
                             return (
                                 <div key={hitItem.id}>
-
-
                                     <li onClick={() => setClickedID(hitItem.id)}>
                                         {hitItem.title}<br />
                                         <p className="urltext">{hitItem.sourceUrl}</p>
                                     </li>
-
-
-
                                 </div>
                             );
                         })}
                     </ul></div> : null}
 
-            {/* <button onClick={() => setTestVar(true)}>ChangeIt</button> */}
 
 
             {/* This maps recipe INGREDIENTS list to page */}
@@ -191,7 +174,6 @@ const SearchPage = () => {
             {/* This is the search form */}
             {showSearchBar ?
                 <form>
-
                     <div className='form-group'>
                         <input
                             className='form-control textinput'
@@ -204,12 +186,11 @@ const SearchPage = () => {
                         />
                     </div>
 
-
                     <div
                         className="buttondiv"
                         onClick={searchButton}>Search
                     </div>
-
+                    
                 </form> : null}
 
 
