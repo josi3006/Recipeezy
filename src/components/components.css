@@ -28,9 +28,6 @@ body {
     right: 0;
 }
 
-p {
-    color:#4bccff;
-}
 
 .contentdiv {
     font-size: 1.75em;
@@ -60,36 +57,10 @@ li {
 ul {
     padding: 0;
 }
-/* 
-.material-icons-outlined {
-  
-    text-rendering: optimizeLegibility;
-
-
-     /* Support for all WebKit browsers. */
-     /* -webkit-font-smoothing: antialiased; */
-    
-   
-     /* Support for Firefox. */
-     /* -moz-osx-font-smoothing: grayscale; */
-   
-     /* Support for IE. */
-     /* font-feature-settings: 'liga'; */
-/* }  */
-
-.icons {
-    color: #8398a0;
-    font-size: 3.6em;
-    cursor: pointer;
-}
-
-
 
 .narrow {
     max-width: 50vw
 }
-
-
 
 .textinput {
     background-color: rgba(10,10,10,.8);
@@ -97,14 +68,12 @@ ul {
     width: 50vw;
 }
 
-
 @media only screen and (max-width: 700px) {
 
     .textinput {
        width: 80vw;
     }
  }
-
 
  form {
     font-size: 1.75em;
@@ -114,8 +83,7 @@ ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 0;
-   
+    padding: 0;   
 }
 
 .buttondiv {
