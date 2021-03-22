@@ -4,19 +4,19 @@
   "description": "A no-chaff recipe generator",
   "icons": [
     {
-      "src": "Ricon.png",
+      "src": "./Ricon.png",
       "sizes": "200x200 192x192 64x64 32x32 24x24 16x16",
       "type": "image/x-icon",
       "purpose": "any"
     },
     {
-      "src": "Ricon512.png",
-      "sizes": "512x512",
+      "src": "./Ricon512.png",
+      "sizes": "512x512 200x200",
       "type": "image/x-icon",
       "purpose": "any"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://josi3006.github.io/Recipeezy/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
