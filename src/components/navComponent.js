@@ -1,6 +1,9 @@
 import './components.css';
 import React, { useState } from 'react';
 import { ReactComponent as HomeIconSVG } from '../images/home-black-48dp.svg';
+import { ReactComponent as HitlistIconSVG } from '../images/youtube_searched_for-black-48dp.svg';
+import { ReactComponent as IngredientListIconSVG } from '../images/shopping_cart-black-48dp.svg';
+import { ReactComponent as RecipeStepsIconSVG } from '../images/format_list_numbered-black-48dp.svg';
 
 
 
@@ -20,16 +23,30 @@ function Navbar(props) {
 
             <HomeIconSVG
                 fill="currentColor"
-                // className="icons"
-                style={{color: "#4bccff"}}
-
+                style={{ color: "#4bccff" }}
             />
 
             <button onClick={showMe} />
 
+
+            { props.showHitListIcon ?
+                <HitlistIconSVG
+                    fill="currentColor"
+                    style={{ color: "#4bccff" }}
+                /> : null}
+
+            { props.showIngredientListIcon ?
+                <IngredientListIconSVG
+                    fill="currentColor"
+                    style={{ color: "#4bccff" }}
+                /> : null}
+
+
             { props.showRecipeStepsIcon ?
-                <p>Yes Is Icon!</p> :
-                <p>No Icon No.</p>}
+                <RecipeStepsIconSVG
+                    fill="currentColor"
+                    style={{ color: "#4bccff" }}
+                /> : null}
 
 
             {/* <i className="fi-xnluxl-home icons" onClick={props.resetEverythingButton}></i>
